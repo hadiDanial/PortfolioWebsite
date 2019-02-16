@@ -1,0 +1,46 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+    margin:auto;
+    text-align: center;
+    height:100%;
+    padding:0;
+}
+
+h1{
+    font-size: 4em;
+}
+h2:hover{    
+    transition-duration: 0.2s;
+    background-color: brown;
+    color:white;
+    transform:rotate(2deg);
+    filter: blur(50%);
+}
+
+#nav{
+    margin: 0 auto;
+}
+h2{
+    transition-duration: 0.2s;
+    /*border:solid 2px black;*/
+    background-color: black;
+    border-radius: 0% 25% 0% 25%;
+    font-size: 75%;
+    width:75%;
+    height:75%;
+    display: inline-block;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    text-align: center;
+    
+}
+
+body{
+    text-align: center;
+    transition-duration:0.2s;
+    background-color: rgb(185, 185, 185);
+}
+h3{
+    font-size: 1.25em;
+}
