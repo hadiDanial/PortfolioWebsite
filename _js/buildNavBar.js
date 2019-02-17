@@ -12,7 +12,7 @@ function BuildNavBar(){
         element.style.margin = 0;
         element.style.width = width/numTabs + "px";
         element.style.cssFloat = "left";
-        element.style.height = "25px";
+        element.style.height = "100px";
         element.getElementsByTagName("h2")[0].style.backgroundColor = colors[i-1];
         }
 }
