@@ -6,32 +6,44 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="_css/style.css" rel="stylesheet" type="text/css"/>
+    <script src="_js/ProjectClass.js" type="text/javascript"></script>
+    <script src="_js/TileGenerator.js" type="text/javascript"></script>
     <!--     <script src="_js/buildNavBar.js"></script>
         <script src="_js/headerTab.js"></script> -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <script> </script>
         
     </head>
-    <body  class="background">
+    <body  class="background"  onload="BuildTiles()">
         <!--<div style='width: 100%; background-color: white; height:  100px;'>
             
         </div>-->
         <header>
-           <a href="index.html"> <div class="logo_container">
-                <div class="logo"><img src="_img/_logo/Logo_Part1.png"></div>
-                <div class="logo_hidden"><img src="_img/_logo/Logo_Part2.png"></div>
-                <div class="logo logoMove"><img src="_img/_logo/Logo_Part3.png"></div>
-                <div class="logo_hidden logoMove"><img src="_img/_logo/Logo_Part4.png"></div> 
+            <a href=#> <div class="logo_container">
+                <div style="float:left"><img src="_img/_logo/Logo_Part1.png"></div>
+                <div style="float:left"><img src="_img/_logo/Logo_Part2.png"></div>
+                <div style="float:left"><img src="_img/_logo/Logo_Part3.png"></div>
+                <div style="float:left"><img src="_img/_logo/Logo_Part4.png"></div> 
             </div>  </a>
             <nav><ul>
-                <a href=#><li>Home</li></a>
+                <a href=# class="nav_active"><li>Home</li></a>
                 <!----<a href=#><li>Games</li></a>-->
                 <a href=#><li>Projects</li></a>
                 <a href=#><li>Blog</li></a>
-                <a href=#><li>About</li></a>
+                <a href="about.html"><li>About</li></a>
             </ul> 
         </nav>   
     </header>
+    <div class="welcome">
+        <h1>Welcome to my website!</h1>
+        <p>My name is Hadi Danial, and this is a PROTOTYPE of my personal/portfolio website.</p>
+    </div>
+    <label>Rows </label>     <input id="numRows" type="number" name="rows" min="1" max="5" value="1">
+    <label>Columns </label>  <input id="numColumns" type="number" name="columns" min="1" max="5" value="2">
+    <button onclick="BuildTiles()">Generate</button>
+    <div id="tiles">
+
+    </div>
 </div>
 </body>
 </html>
