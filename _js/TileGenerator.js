@@ -1,5 +1,7 @@
+var tiles = [];
+
 function BuildTiles(xNum, yNum, margin, id = "tiles", width = 1920, height = 940){
-    var tiles = [];
+    tiles = [];
     var w = (width / xNum) -  (margin * 2);
     var h = (height / yNum) - (margin * 2);
     document.getElementById(id).style.width = width + margin/2 + "px";
@@ -24,7 +26,7 @@ function BuildTiles(xNum, yNum, margin, id = "tiles", width = 1920, height = 940
 }
 
 function BuildTiles(){
-    var tiles = [];
+    tiles = [];
     var id = "tiles";
     document.getElementById(id).innerHTML = "";
     var width = 1200;
@@ -46,13 +48,13 @@ function BuildTiles(){
             tile.style.left = ((margin+w)*j)+"px";
             tile.className = "tile";
             tile.onclick = function(){
-                tile.classList.toggle("redTile");
+                tile.classList.toggle("blackTile");
             }
             document.getElementById(id).append(tile);
             tiles.push(tile);
         }
     }
-    console.log(tiles);
+    //console.log(tiles);
 }
 
 function Test(){
