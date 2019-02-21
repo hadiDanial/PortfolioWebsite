@@ -1,0 +1,10 @@
+ABOUT INFO
+
+    <div class="about">
+        <h1>About Me</h1>
+        <p>My name is Hadi Danial, and this is a PROTOTYPE of my personal/portfolio website.</p>
+        <p>I currently live in Nazareth, Israel, and am studying Software Engineering at Ort Braude.</p>
+        <p>I have experience as a graphic designer and a programmer/Unity developer.</p>
+        <p>You can contact me at: <span style="text-decoration:underline; color:rgb(121, 204, 207); cursor: pointer;">hadidanial.contact@gmail.com </span></p>
+         
+    </div>
