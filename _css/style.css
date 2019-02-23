@@ -140,6 +140,22 @@ p{
     border-radius: 20px;
     background-color: white;
     transition: 0.25s ease-out;
+    color: black;
+    float: left;
+    overflow: hidden;
+}
+.tile p{
+    color:black;
+    text-overflow: ellipsis;
+}
+.tile h2{
+    color:black;
+    text-decoration-line: underline;
+    transition: 0.3s ease-out;
+
+}
+.tile h2:hover{
+    color: rgb(80, 111, 253);
 }
 #tiles{
     margin: 0 auto;

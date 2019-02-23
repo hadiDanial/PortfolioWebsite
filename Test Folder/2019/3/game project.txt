@@ -1,0 +1,2 @@
+*.desc this is a fun game project*.desc
+*.tags game, gamejam, project, c#*.tags
