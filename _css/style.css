@@ -185,8 +185,8 @@ p{
     }
 }
 
-@media (max-width: 1000px){
+@media (min-width: 1000px){
     nav ul{
-        width: 20%;
+        /*width: 20%;*/
     }
 }

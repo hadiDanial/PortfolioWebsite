@@ -1,6 +1,6 @@
 $(document).ready(function(){
     //$('header').load('header.html');
-    var fileName = location.href.split("/").slice(-1); 
+    var fileName = location.href;//.split("/").slice(-1); 
     if(fileName.toString().includes("index.html")){
         $( "nav ul a:nth-child(1)" ).addClass("nav_active");
         $( "nav ul a:nth-child(2)" ).removeClass("nav_active");
@@ -13,7 +13,7 @@ $(document).ready(function(){
         $( "nav ul a:nth-child(2)" ).removeClass("nav_active");
         $( "nav ul a:nth-child(3)" ).removeClass("nav_active");
     }
-    if(fileName.toString().includes("blog.html")){
+    if(fileName.toString().includes("blog")){
         $( "nav ul a:nth-child(3)" ).addClass("nav_active");
         $( "nav ul a:nth-child(1)" ).removeClass("nav_active");
         $( "nav ul a:nth-child(2)" ).removeClass("nav_active");
