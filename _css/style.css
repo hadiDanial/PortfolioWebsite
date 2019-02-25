@@ -79,7 +79,7 @@ nav ul{
 nav ul a{
     text-decoration: none;
     color:white;
-    width: 25%;
+    width: 20%;
     border-right:  0.5px solid rgb(165, 165, 165);
     min-height: inherit;
     display: -webkit-flex; /* Safari */
@@ -149,6 +149,7 @@ p{
     margin: 0 auto;
     padding: 0;
     text-align: center;
+    width: 90%;
 }
 
 .tile{
@@ -191,6 +192,7 @@ p{
     .container{
         display: flex;
         flex-wrap: wrap;
+        width: 70%;
     }
 }
 
