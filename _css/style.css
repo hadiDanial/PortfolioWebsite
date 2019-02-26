@@ -112,7 +112,7 @@ nav ul a:hover{
     transform: scale(1.025);
     border:  1px solid rgb(165, 165, 165);
     font-size: 18px;
-
+    
 }
 
 nav li{  
@@ -126,13 +126,13 @@ nav li{
 @keyframes fadeIn{
     0%{
         opacity: 0;
-        }
+    }
     65%{
         opacity: 0.5;
-        }
+    }
     100%{
         opacity: 1;
-        }
+    }
 }
 
 h1{
@@ -172,11 +172,59 @@ p{
     color:black;
     text-decoration-line: underline;
     transition: 0.3s ease-out;
-
+    
 }
 .tile h2:hover{
     color: rgb(80, 111, 253);
 }
+
+#search_results{
+    width: 80%;
+}
+
+.search_result{
+    border-radius: 10px;
+    background-color: white;
+    transition: 0.25s ease-out;
+    color: black;
+    overflow: hidden;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: left;
+    width: 80%;
+    min-height: 200px;
+    text-overflow: ellipsis;
+    animation: resultsAnim 1s 0s ease-in-out;
+    
+}
+@keyframes resultsAnim{
+    0%{
+        transform: translateX(200%);
+        opacity:0;
+    }
+    65%{
+        opacity:0.45;
+    }
+    100%{
+        transform: translateX(0);
+        opacity:1;
+    }
+}
+
+.search_result p{
+    color:black;
+    text-overflow: ellipsis;
+}
+.search_result h2{
+    color:black;
+    text-decoration-line: underline;
+    transition: 0.3s ease-out;
+    
+}
+.search_result h2:hover{
+    color: rgb(80, 111, 253);
+}
+
 .blackTile{
     background-color: black;
     border-radius: 0px;
