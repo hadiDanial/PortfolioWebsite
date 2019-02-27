@@ -176,14 +176,39 @@ h1{
     font-size: 3em;
 }
 
+h2{
+    text-align: center;
+    padding-left: 10px;
+    color: white;
+
+}
+h3{
+    text-align: left;
+    color:#2E2E2E;
+    width: 70%;
+}
+
 p{
     color:white;
+    width: 70%;
+    padding-bottom: 10px;
+    text-align: left;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: normal; 
+    overflow: hidden;
+}
+.center_text p{
+    text-align: center;
+
 }
 .container{
     margin: 0 auto;
     padding: 0;
-    text-align: center;
-    width: 90%;
+    text-align: center;    
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
 }
 
 .tile{
@@ -197,19 +222,66 @@ p{
     flex-basis: 32%;
     min-height: 200px;
     text-overflow: ellipsis;
+    /*display:flex;*/
 }
 .tile p{
     color:black;
-    text-overflow: ellipsis;
+    width: 90%;
+
 }
-.tile h2{
-    color:black;
+.tile h3{
+    color:#2E2E2E;
     text-decoration-line: underline;
     transition: 0.3s ease-out;
+    width: 90%;
     
 }
-.tile h2:hover{
+.tileText{
+    /*flex-basis: 50%;*/
+    height: 90%;
+    padding:10px;
+}
+.tile img{    
+    /*flex-basis: 50%;*/
+    padding: 10px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 20px;
+    height:150px;
+}
+.tile h3:hover{
     color: rgb(80, 111, 253);
+}
+
+
+.searchBtn{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    transform: translate(-40px, 9px);
+    cursor: pointer;
+    width: 36px;
+    height: 30px;
+}
+
+#search_input{
+    border-radius: 10px;
+    border:none; 
+    background-color: whitesmoke;
+    width: 500px;
+    height: 30px;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 36px;
+    background-image: url("/_img/search.svg");
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+    background-size: 18px;
+}
+.searchBtn:focus{
+    outline:none;
+}
+#search_input:focus{
+    outline:none;
 }
 
 #search_results{
@@ -256,6 +328,7 @@ p{
     margin: 40px;
     font-size: 1.25em;
 }
+
   /**  /GENERAL  **/
 
   /**  ANIMATIONS  **/
@@ -318,7 +391,7 @@ p{
     .container{
         display: flex;
         flex-wrap: wrap;
-        width: 70%;
+        width: 90%;
     }   
     nav ul{
         min-height: 50px;
@@ -365,6 +438,14 @@ p{
     }
     .fadeIn{
         animation: fadeIn 0.3s 0s ease-in;
+    }
+
+    p{
+        width: 90%;
+    }
+
+    .tile{
+        flex-basis: 100%;
     }
 }
 

@@ -36,9 +36,9 @@ async function displayResults(results){
 
 	  var resultsBox = document.getElementById("search_results");
 
-	  if(results.length<= 0 ) resultsBox.innerHTML = "No results :(";
+	  if(results.length<= 0 ) resultsBox.innerHTML = "<p>No results :(</p>";
 	  else{
-		resultsBox.innerHTML = "Found " + results.length + " results:<br>";
+		resultsBox.innerHTML = "<p>Found " + results.length + " results:</p><br>";
 		for(var i = 0; i < results.length; i++){
 			var div = addInfo(i,results);
 			div.classList = "search_result";
