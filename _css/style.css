@@ -25,6 +25,7 @@
 header{
     background-color:#262626;
     min-height: 100px;
+    min-width: 100%;
     -webkit-box-shadow: 0px 5px 5px 0px rgba(10, 10, 10, 0.75);
     -moz-box-shadow: 0px 5px 5px 0px rgba(10, 10, 10, 0.75);
     box-shadow: 0px 5px 5px 0px rgba(10, 10, 10, 0.75);
@@ -245,6 +246,7 @@ p{
     /*flex-basis: 50%;*/
     padding: 10px;
     width: 100%;
+    object-fit: cover;
     margin: 0 auto;
     border-radius: 20px;
     height:150px;
@@ -276,6 +278,7 @@ p{
     background-repeat: no-repeat;
     background-position: 98% 50%;
     background-size: 18px;
+    margin: 10px;
 }
 .searchBtn:focus{
     outline:none;
@@ -289,19 +292,13 @@ p{
 }
 
 .search_result{
-    border-radius: 10px;
-    background-color: white;
-    transition: 0.25s ease-out;
-    color: black;
-    overflow: hidden;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    text-align: left;
-    width: 80%;
-    min-height: 200px;
     text-overflow: ellipsis;
     animation: resultsAnim 1s 0s ease-in-out;
     
+}
+
+.search_wait{
+    transform: translateX(200%);
 }
 
 .search_result p{
@@ -311,7 +308,7 @@ p{
 .search_result h2{
     color:black;
     text-decoration-line: underline;
-    transition: 0.3s ease-out;
+    transition: 0.3s cubic-bezier(0.680, -0.550, 0.265, 1.550);
     
 }
 .search_result h2:hover{
@@ -448,5 +445,12 @@ p{
         flex-basis: 100%;
     }
 }
-
+@media (max-width: 400px){
+    .logo_container{
+    margin-left: 10px;
+    }
+    .menuBarsContainer {
+    margin-right: 10px;
+    }
+  }
   /**  /MOBILE  **/

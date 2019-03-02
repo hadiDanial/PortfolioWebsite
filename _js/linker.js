@@ -1,43 +1,76 @@
 let json;
 
-function loadDoc(n = -1) {
+function loadDoc(n = -1, tagFilter="") {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             json = JSON.parse( this.responseText);
             if(n <= 0)
-                addToHTML();
+            addToHTML(tagFilter);
             else
-                addNumToHTML(n);
+            addNumToHTML(n, tagFilter);
         }
     };
     console.log(xhttp.open("GET", "/links.json", true));
     xhttp.send();
 }
 
-function addToHTML(){
+function addToHTML(tagFilter){
     var ajax = document.getElementById("ajax");
-    //ajax.style.display = "inline-block";
-    //document.getElementById("page-title").innerHTML = "All Posts";
     ajax.innerHTML="";
-    //ajax.style.width="67%";
-    
-    for(var i = 0; i<json.length; i++){
-        var div = addInfo(i,json);
-        div.classList = "tile";
-        ajax.appendChild(div);
+    if(tagFilter == ""){
+        for(var i = 0; i<json.length; i++){
+            var div = addInfoJSON(i,json);
+            div.classList = "tile";
+            ajax.appendChild(div);
+        }
     }
+    else{
+        var results = findTag(json, tagFilter);
+        for(var i = 0; i<results.length; i++){
+            var div = addInfoCustom(i,results);
+            div.classList = "tile";
+            ajax.appendChild(div);
+        }
+    }
+    
 }
-function addNumToHTML(num){
+function addNumToHTML(num, tagFilter){
     var ajax = document.getElementById("ajax");
-    ajax.innerHTML="";    
-    for(var i = 0; i<json.length && i < num; i++){
-        var div = addInfo(i,json);
-        div.classList = "tile";
-        ajax.appendChild(div);
+    ajax.innerHTML="";
+    if(tagFilter == ""){ 
+        for(var i = 0; i<json.length && i < num; i++){
+            var div = addInfoJSON(i,json);
+            div.classList = "tile";
+            ajax.appendChild(div);
+        }
+    }
+    else{
+        var results = findTag(json, tagFilter);
+        for(var i = 0; i<results.length && i < num; i++){
+            var div = addInfoCustom(i,results);
+            div.classList = "tile";
+            ajax.appendChild(div);
+        }
     }
 }
 
+
+function addInfoJSON(i){
+    var p = new Post();
+    p = p.GetPostFromJSON(json,i);
+    return p.BuildPostDiv(i);
+}
+function addInfoCustom(i, posts){
+    var p = new Post();
+    p = p.GetPostFromJSON(posts,i);
+    return p.BuildPostDiv(i);
+}
+async function fetchHtmlAsText(url) {
+    return await (await fetch(url)).text();
+}
+
+/*
 function addInfo(i){
     var div = document.createElement("div");
     var img = document.createElement("img");
@@ -73,26 +106,23 @@ async function loadLink(i){
     
 }
 
-
-async function fetchHtmlAsText(url) {
-    return await (await fetch(url)).text();
-}
-
 function GetTags(i){
     var t;
     if(json[i].tags == ""){
-
+        
         t += "<p><em>Tags: None</em></p>";
     }
     else{
-         t ="<p><em>Tags: ";
+        t ="<p><em>Tags: ";
         
         for (var j = 0; j < json[i].tags.length; j++){
             if(j == json[i].tags.length - 1)
-                t += json[i].tags[j] + "</em></p>";
+            t += json[i].tags[j] + "</em></p>";
             else
-                t += json[i].tags[j] +", ";
+            t += json[i].tags[j] +", ";
         }
     }
     return t;
 }
+
+*/
