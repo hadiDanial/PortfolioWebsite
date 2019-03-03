@@ -24,9 +24,7 @@ function initSearch(){
     console.log(xhttp.open("GET", "/links.json", true));
     xhttp.send();
 }
-function search(){
-	findTerm()
-}
+
 /*
 function search(){
 	var xhttp = new XMLHttpRequest();
