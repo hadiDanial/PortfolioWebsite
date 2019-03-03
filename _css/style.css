@@ -212,6 +212,15 @@ p{
     width: 70%;
 }
 
+.container img{
+    width: 100%;
+}
+
+.container .inlineImg{
+    width: 30%;
+    display: inline-block;
+}
+
 .tile{
     border-radius: 10px;
     background-color: white;

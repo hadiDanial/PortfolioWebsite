@@ -1,7 +1,15 @@
+[comment]: # (*.desc*Creating my personal website*.desc*)
+[comment]: # (*.tags*website, webdev, frontend, js, finished-project*.tags*)
+[comment]: # (*.title*Personal Website*.title*)
+[comment]: # (*.date*3-3-2019*.date*)
+
+
 # Personal Website
 
 This website was the first web dev project I've ever done.  
 It was built from scratch using plain `HTML, CSS, JS`, and a little bit of `jQuery` mixed in.
+
+![Cover Image](Website_Assets/coverImg.png)
 
 Web development is... interesting, and different from what I'm used to with `C#`. I spent a lot of time looking up how to accomplish what I wanted, be it with the CSS styling and animations, or scripting.
 
@@ -11,7 +19,7 @@ I also didn't want to use any libraries or frameworks such as React or Angular. 
 
 ### I faced several challenges getting everything to work correctly.
 
-1. Using a CMS for the blog was overkill, and, like I said, I wanted to learn the basics. I didn't want to deal with backend or a database on my first project. While researching, I stumbled upon [Jekyll]([https://link](https://jekyllrb.com/)). It seemed like it would have been the ideal solution, but using it meant giving up on learning web dev on this project. It did, however, inspire me.
+1. Using a CMS for the blog was overkill, and, like I said, I wanted to learn the basics. I didn't want to deal with backend or a database on my first project. While researching, I stumbled upon [Jekyll](https://jekyllrb.com/). It seemed like it would have been the ideal solution, but using it meant giving up on learning web dev on this project. It did, however, inspire me.
 
     I developed a simple app in `C#`, using `WPF`, that would search for `.html` files in any given directory, then generate a `JSON` array based on the data it found, which is located in a `.md` or `.txt` file with the same name as the `.html` document. The `JSON` data contains a title, description, date, tags, a cover image, and a path for each post.
 
@@ -21,7 +29,7 @@ I also didn't want to use any libraries or frameworks such as React or Angular. 
 
 ### In addition, I tried several things that didn't end up panning out:
 
-   1. I created a script that loads the content of the `.html` files into a div. The idea was that I'd dynamically load the content, so that I'd only have a handful of pages to take care of, and the rest would be generated on the fly as requested. I had a working prototype, but ended up scrapping it because it meant that the website would be a Single Page App, which is not really suited to a blog. I couldn't find an easy way to take care of the URL routing issue without a backend or using a framework. A blog wouldn't work well if you couldn't go to specific posts with a URL, would it? Having to search every time would get annoying quick.
+   1. I created a script that loads the content of the `.html` files into a div, similar to loading the header. The idea was that I'd dynamically load the content, so that I'd only have a handful of pages to take care of, and the rest would be generated on the fly as requested. I had a working prototype, but ended up scrapping it because it meant that the website would be a Single Page App, which is not really suited to a blog. I couldn't find an easy way to take care of the URL routing issue without a backend or using a framework. A blog wouldn't work well if you couldn't go to specific posts with a URL, would it? Having to search every time would get annoying quick.
 
    2. I decided to write the posts using `Markdown`, then convert that to `HTML` using an online converter such as [Dillinger]([https://link](https://dillinger.io/)). At one point, I wanted to skip converting the `Markdown` to `HTML` manually, and instead use something like [Showdown]([https://link](http://showdownjs.com/)) at runtime. I ended up scrapping that idea too, and converting the `Markdown` to `HTML` and uploading `.html` files.
 
