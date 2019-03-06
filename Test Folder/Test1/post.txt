@@ -1,4 +1,0 @@
-*.desc My post description! Hello! <>!@# #Bye *.desc
-
-
-My post 

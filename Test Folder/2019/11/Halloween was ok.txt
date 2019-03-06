@@ -1,4 +1,0 @@
-*.titleHalloween was ok?*.title
-*.tags holiday*.tags
-*.desc I guess it was okay?*.desc
-*.date25-10-2019*.date

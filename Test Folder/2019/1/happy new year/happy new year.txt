@@ -1,6 +1,0 @@
-*.desc Happy new year! *.desc
-
-*.tags general, holiday, plans *.tags
-
-*.title NEW TITLE YEAR *.title
-*.date1-1-2019*.date
