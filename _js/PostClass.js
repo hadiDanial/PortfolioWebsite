@@ -31,6 +31,9 @@ class Post {
         var text = document.createElement("text");
         var id = "link-" + i;
         img.src = this.coverImage;
+        img.onerror = function(){
+            img.src = "/_img/defaultCover.png";
+        }
         //img.width = "40%";
         text.innerHTML += "<br><a href='" + this.path + "' style='text-decoration:underline; color:whitesmoke;' id='" + id + "' > <h3>" + this.title + "</h3></a>"; //onclick='loadLink("+i+")'
         text.innerHTML += "<p>Description: " + this.description + "</p>";
