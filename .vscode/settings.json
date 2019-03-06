@@ -2,5 +2,10 @@
     "editor.insertSpaces": false,
     "editor.wordWrap": "on",
     "editor.quickSuggestions": false,
-    "pandoc.htmlOptString": "-s -f gfm -t html5 --css=_css/style.css"
+    "pandoc.htmlOptString": "-s -f gfm -t html5 --css=_css/style.css",
+    "cSpell.words": [
+        "Lague",
+        "Lague's",
+        "Spriteshape"
+    ]
 }
