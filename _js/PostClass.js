@@ -68,6 +68,27 @@ class Post {
         }
         return t;
     }
+    /**
+     * Returns true if the tags of this post contain the search term.
+     * @param {text} searchTerm The tag to search for.
+     */
+    HasTag(searchTerm){
+        for (var j = 0; j < this.tags.length; j++)
+				if(this.tags[j].toLowerCase().includes(searchTerm))
+                    return true;
+                    
+        return false;
+    }
+    /**
+     * Returns true if the post title, description, or date contain the search term.
+     * @param {text} searchTerm The tag to search for.
+     */
+    PostHasTerm(searchTerm){
+        if(this.title.toLowerCase().includes(searchTerm)||
+        this.description.toLowerCase().includes(searchTerm)||
+        this.date.toLowerCase().includes(searchTerm)) return true;
+        else return false;
+    }
 }
 
 

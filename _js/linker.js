@@ -57,13 +57,13 @@ function addNumToHTML(num, tagFilter){
 
 
 function addInfoJSON(i){
-    var p = new Post();
-    p = p.GetPostFromJSON(json,i);
+    var p = new Post(posts[i].title, posts[i].description, posts[i].date, posts[i].tags, posts[i].coverImage, posts[i].path);    
+    //p = p.GetPostFromJSON(json,i);
     return p.BuildPostDiv(i);
 }
 function addInfoCustom(i, posts){
-    var p = new Post();
-    p = p.GetPostFromJSON(posts,i);
+    var p = new Post(posts[i].title, posts[i].description, posts[i].date, posts[i].tags, posts[i].coverImage, posts[i].path);
+    //p = p.GetPostFromJSON(posts,i);
     return p.BuildPostDiv(i);
 }
 async function fetchHtmlAsText(url) {
