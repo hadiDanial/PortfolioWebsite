@@ -57,7 +57,7 @@ function addNumToHTML(num, tagFilter){
 
 
 function addInfoJSON(i){
-    var p = new Post(posts[i].title, posts[i].description, posts[i].date, posts[i].tags, posts[i].coverImage, posts[i].path);    
+    var p = new Post(json[i].title, json[i].description, json[i].date, json[i].tags, json[i].coverImage, json[i].path);    
     //p = p.GetPostFromJSON(json,i);
     return p.BuildPostDiv(i);
 }
