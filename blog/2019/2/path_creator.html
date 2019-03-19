@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>HD - Path Creator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="/_css/style.css" rel="stylesheet" type="text/css"/>
+	<script src="/_js/jquery-3.3.1.min.js" type="text/javascript"></script>
+	<script src="/_js/ProjectClass.js" type="text/javascript"></script>
+	<script src="/_js/LoadHeader.js" type="text/javascript"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#c8cdcd">
+	<meta name="theme-color" content="#ffffff">
+	<script> </script>      
+</head>
+<body  class="background" id="b">
+	<div class="content fadeIn">
+		<h1><a id="Path_Creator"></a>Path Creator</h1>
+		<h4><em>February 10th, 2019</em></h4>
+		<p><a href="https://github.com/hadiDanial/Path-Creator">Github link</a>. This is a fork of Sebastian Lague’s <a href="https://github.com/SebLague/Path-Creator">Path Creator for Unity</a>.</p>
+		<p>I had been interested in path based movement for a while, so when Sebastian Lague released his Path Creator, I was immediately intrigued. I decided to try and recreate my 2018 Global Game Jam game, <a href="https://globalgamejam.org/2018/games/electric-runner">Electric Runner</a>, using this tool, as it was a buggy mess and could have been done much better.</p>
+		<p>I ended up focusing more on expanding the path creator tool instead, as I found it challenging and more fun to work on. I think this particular project will prove to be useful in the future. During this project, I learned about editor scripting and Unity's Sprite Shape.</p>
+		
+		<h3>PathToSpriteShape</h3>
+		<p>The tool had a road mesh generator example script, but I wanted to use a more flexible 2D tool with it, so I started implementing a conversion from the paths to Unity’s Spriteshape. Converting from control points to tangents was tricky, but after studying both tools for a while, I managed to successfully create a sprite shape from a path.</p>
+		<img class="halfWidthImg" src="path_creator_assets/pathToSpriteShape.gif" alt="Sprite Shape">
+		<p>Sprite shape is not as flexible as the path creator, and it’s not really usable in the same way in real time, but the path creator didn’t have any built in rendering capabilities. This is the best of both worlds.</p>
+		
+		
+		<h3>Path Generators</h3>
+		<p>I built several different types of path generators, most of which can generate points automatically over time. It’s possible to limit the total number of points the path has, either by preventing further points from being generated or removing points at the start of the path.</p>
+		<ol>
+			<li> 
+				<p><strong>Random Path Generator:</strong> A simple path generator. Can generate points with minimum and maximum x, y, and z values.</p>
+					<img class="fullWidthImg" src="path_creator_assets/randomGen1.png" alt="Random Generator">
+			</li>
+			
+			<li><p><strong>Spiral Path Generator:</strong> This generator creates spiral shapes. It can generate around all 3 axis, add variations per cycle (to adjust the shape, make it bigger or smaller), and generate either clockwise or anti-clockwise.</p><br>
+				<img src="path_creator_assets/spiralGen.png" alt="Spiral Generator"></li>
+				<li><p><strong>Polygon Generator:</strong> This is, by far, the most interesting one of the bunch. With the polygon generator, you can create a polygon with n-edges, choose the distance between the polygon’s origin and the vertices, and rotate it by an offset angle. In addition, you can choose whether you want the vertices to have sharp corners, and if not, how smooth they should be. You can divide the edges for more points along the polygon, and you can choose to inset every n-th point to a certain percentage inside the polygon.</p><br>
+					<img class="halfWidthImg" src="path_creator_assets/coverImg.png" alt="Polygon Generator"></li>
+				</ol>
+				<p><em>I plan to expand on this in the future, adding support for custom axis, instead of the plain X, Y, Z, and perhaps add a mega generator that gives the ability to switch from one to the next within the same path.</em></p>
+				
+				
+				<h3>Editor Scripting</h3>
+				<p>The default inspector was not appropriate at all for this project. I needed to add a way to generate points in the editor, and show or hide different settings based on the type of generator. I learned a little bit about editor scripting and managed to create custom inspectors for the different generator types.</p>
+				<div class="picList"><img src="path_creator_assets/randomGenEditor.png" alt="Random Generator Editor"><br>
+					<img src="path_creator_assets/spiralGenEditor.png" alt="Spiral Generator Editor"><br>
+					<img src="path_creator_assets/polygonEditor.png" alt="Polygon Generator Editor"></div>
+				</div>
+				<footer>
+					<div class="line"> </div>
+					<a href="https://www.hadidanial.com">Hadi Danial</a>
+				</footer>
+			</body>
+			</html>
+			
