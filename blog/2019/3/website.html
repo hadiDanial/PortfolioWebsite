@@ -21,44 +21,46 @@
 </head>
 <body  class="background" id="b">
 	<div class="content fadeIn">
-		<h1><a id="Personal_Website"></a>Personal Website</h1>
-		<h4><em>March 3rd, 2019</em></h4>
-		<p>This website was the first web dev project I’ve ever done.<br>
-			It was built from scratch using plain <code>HTML, CSS, JS</code>, and a little bit of <code>jQuery</code> mixed in.</p>
-			<img class="fullWidthImg rounded" src="Website_Assets/coverImg.png" alt="Cover Image">
-			<p>Web development is… interesting, and different from what I’m used to with <code>C#</code>. I spent a lot of time looking up how to accomplish what I wanted, be it with the CSS styling and animations, or scripting.</p>
-			<p>At first, I didn’t want to create a static HTML website. I didn’t want to go about manually adding links to each post I made. At the same time, I didn’t want to use a prebuilt CMS, because this was, first and foremost, a project to <strong>learn</strong> front end web development, and a portfolio second.</p>
-			<p>I also didn’t want to use any libraries or frameworks such as React or Angular. I didn’t want to spend the time learning them before making sure I had a good grasp of the basics of web development.</p>
-			<h3><a id="I_faced_several_challenges_getting_everything_to_work_correctly_19"></a>I faced several challenges getting everything to work correctly.</h3>
-			<ol>
-				<li>
-					<p>Using a CMS for the blog was overkill, and, like I said, I wanted to learn the basics. I didn’t want to deal with backend or a database on my first project. While researching, I stumbled upon <a href="https://jekyllrb.com/" target="blank">Jekyll</a>. It seemed like it would have been the ideal solution, but using it meant giving up on learning web dev on this project. It did, however, inspire me.</p>
-					<p>I developed a simple app in <code>C#</code>, using <code>WPF</code>, that would search for <code>.html</code> files in any given directory, then generate a <code>JSON</code> array based on the data it found, which is located in a <code>.md</code> or <code>.txt</code> file with the same name as the <code>.html</code> document. The <code>JSON</code> data contains a title, description, date, tags, a cover image, and a path for each post.</p>
-					<p>Using this data, I was able to create a simple search system, and a way to generate links to all the pages on my website, simply by running the app and updating the <code>JSON</code> file.</p>
-				</li>
-				<li>
-					<p>I didn’t want to reuse the same <code>HTML</code> code for the header in all of my pages. I was looking for ways to somewhat automate the process, and if I wanted to change the header and nav bar later on, I didn’t want to manually go through all of the pages in the website and replace the code. So I created a <code>JavaScript</code> script that loads the header and highlights the correct category on the nav bar. This script also handles the nav menu on mobile.</p>
-				</li>
-			</ol>
-			<h3><a id="In_addition_I_tried_several_things_that_didnt_end_up_panning_out_29"></a>In addition, I tried several things that didn’t end up panning out:</h3>
-			<ol>
-				<li>
-					<p>I created a script that loads the content of the <code>.html</code> files into a div, similar to loading the header. The idea was that I’d dynamically load the content, so that I’d only have a handful of pages to take care of, and the rest would be generated on the fly as requested. I had a working prototype, but ended up scrapping it because it meant that the website would be a Single Page App, which is not really suited to a blog. I couldn’t find an easy way to take care of the URL routing issue without a backend or using a framework. A blog wouldn’t work well if you couldn’t go to specific posts with a URL, would it? Having to search every time would get annoying quick.</p>
-				</li>
-				<li>
-					<p>The posts are written in <code>Markdown</code>. At one point, I wanted to skip converting the <code>Markdown</code> to <code>HTML</code> manually, and instead use something like <a href="http://showdownjs.com/" target="blank">Showdown</a> at runtime. I ended up scrapping that idea too, and converting the <code>Markdown</code> to <code>HTML</code> using an online converter such as <a href="https://dillinger.io" target="blank">Dillinger</a> and uploading the <code>.html</code> files. </p>
-				</li>
-			</ol>
-			<h3><a id="Future_changes_35"></a>Future changes:</h3>
-			<ol>
-				<li><p>I want to add post groups, so that posts concerning a single topic or project can be shown together.</p></li>
-				<li><p>I might consider adding comments, which might be tricky considering how I implemented the blog itself.</p></li>
-			</ol>
-			<br>
-			<br>
-			<br>
-			<br>
+		<article>
+			<h1>Personal Website</h1>
+			<h4><em>March 3rd, 2019</em></h4>
+			<p>This website was the first web dev project I’ve ever done.<br>
+				It was built from scratch using plain <code>HTML, CSS, JS</code>, and a little bit of <code>jQuery</code> mixed in.</p>
+				<img class="fullWidthImg rounded" src="Website_Assets/coverImg.png" alt="Cover Image">
+				<p>Web development is… interesting, and different from what I’m used to with <code>C#</code>. I spent a lot of time looking up how to accomplish what I wanted, be it with the CSS styling and animations, or scripting.</p>
+				<p>At first, I didn’t want to create a static HTML website. I didn’t want to go about manually adding links to each post I made. At the same time, I didn’t want to use a prebuilt CMS, because this was, first and foremost, a project to <strong>learn</strong> front end web development, and a portfolio second.</p>
+				<p>I also didn’t want to use any libraries or frameworks such as React or Angular. I didn’t want to spend the time learning them before making sure I had a good grasp of the basics of web development.</p>
+				<h3>I faced several challenges getting everything to work correctly.</h3>
+				<ol>
+					<li>
+						<p>Using a CMS for the blog was overkill, and, like I said, I wanted to learn the basics. I didn’t want to deal with backend or a database on my first project. While researching, I stumbled upon <a href="https://jekyllrb.com/" target="blank">Jekyll</a>. It seemed like it would have been the ideal solution, but using it meant giving up on learning web dev on this project. It did, however, inspire me.</p>
+						<p>I developed a simple app in <code>C#</code>, using <code>WPF</code>, that would search for <code>.html</code> files in any given directory, then generate a <code>JSON</code> array based on the data it found, which is located in a <code>.md</code> or <code>.txt</code> file with the same name as the <code>.html</code> document. The <code>JSON</code> data contains a title, description, date, tags, a cover image, and a path for each post.</p>
+						<p>Using this data, I was able to create a simple search system, and a way to generate links to all the pages on my website, simply by running the app and updating the <code>JSON</code> file.</p>
+					</li>
+					<li>
+						<p>I didn’t want to reuse the same <code>HTML</code> code for the header in all of my pages. I was looking for ways to somewhat automate the process, and if I wanted to change the header and nav bar later on, I didn’t want to manually go through all of the pages in the website and replace the code. So I created a <code>JavaScript</code> script that loads the header and highlights the correct category on the nav bar. This script also handles the nav menu on mobile.</p>
+					</li>
+				</ol>
+				<h3>In addition, I tried several things that didn’t end up panning out:</h3>
+				<ol>
+					<li>
+						<p>I created a script that loads the content of the <code>.html</code> files into a div, similar to loading the header. The idea was that I’d dynamically load the content, so that I’d only have a handful of pages to take care of, and the rest would be generated on the fly as requested. I had a working prototype, but ended up scrapping it because it meant that the website would be a Single Page App, which is not really suited to a blog. I couldn’t find an easy way to take care of the URL routing issue without a backend or using a framework. A blog wouldn’t work well if you couldn’t go to specific posts with a URL, would it? Having to search every time would get annoying quick.</p>
+					</li>
+					<li>
+						<p>The posts are written in <code>Markdown</code>. At one point, I wanted to skip converting the <code>Markdown</code> to <code>HTML</code> manually, and instead use something like <a href="http://showdownjs.com/" target="blank">Showdown</a> at runtime. I ended up scrapping that idea too, and converting the <code>Markdown</code> to <code>HTML</code> using an online converter such as <a href="https://dillinger.io" target="blank">Dillinger</a> and uploading the <code>.html</code> files. </p>
+					</li>
+				</ol>
+				<h3>Future changes:</h3>
+				<ol>
+					<li><p>I want to add post groups, so that posts concerning a single topic or project can be shown together.</p></li>
+					<li><p>I might consider adding comments, which might be tricky considering how I implemented the blog itself.</p></li>
+				</ol>
+			</article>
 		</div>
+		<footer>
+				<div class="line"> </div>
+				<a href="https://www.hadidanial.com">Hadi Danial</a>
+		</footer>
 	</body>
 	</html>
 	
