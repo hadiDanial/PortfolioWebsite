@@ -22,9 +22,26 @@
     "C#",
     "WPF",
     "JSON",
+    "github",
     "finished-project"
   ],
   "coverImage": "\\blog\\2019\\3\\website_json_generator_assets\\coverImg.png",
   "path": "\\blog\\2019\\3\\website_json_generator.html"
+},
+{
+  "title": "Path Creator",
+  "description": "A fork of Sebastian Lague's Path Creator for Unity, with path generation and Path to SpriteShape conversion",
+  "date": "10.2.2019",
+  "tags": [
+    "unity",
+    "C#",
+    "editor",
+    "path",
+    "path-creator",
+    "github",
+    "finished-project"
+  ],
+  "coverImage": "\\blog\\2019\\2\\path_creator_assets\\coverImg.png",
+  "path": "\\blog\\2019\\2\\path_creator.html"
 }
 ]
