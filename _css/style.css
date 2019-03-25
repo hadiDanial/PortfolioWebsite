@@ -309,6 +309,7 @@ p{
     margin: 0 auto;
     border-radius: 20px;
     height:150px;
+    cursor: pointer;
 }
 .tile h3:hover{
     color: rgb(80, 111, 253);
@@ -548,6 +549,12 @@ background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1
 
     .tile{
         flex-basis: 100%;
+    }
+    .content .picList {
+        display:block;
+    }
+    .content .picList img{
+        width: 90%;
     }
 }
 @media (max-width: 400px){
