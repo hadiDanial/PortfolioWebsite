@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137014872-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-137014872-1');
+    </script>
+    
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Hadi's Projects</title>
@@ -23,16 +33,18 @@
         <meta name="theme-color" content="#ffffff">
         <script> </script>
     </head>
-    <body  class="background" onload="loadDoc(-1, 'finished-project')" id="b"><!-- loadDoc(-1, 'finished-project') --->
+    <body  class="background" onload="loadDoc(-1, 'featured')" id="b"><!-- loadDoc(-1, 'finished-project') --->
         
         <div class="fadeIn">
             <div>
-                <h1 id="page-title">My Projects</h1>
+                <h1 id="page-title">Featured Projects</h1>
             </div>
             <div id="tile"></div>
-            <p style="text-align: center">These are my latest projects:</p>
+            <!--- 
+                <p style="text-align: center">These are my latest projects:</p>
+            -->
             <div class="line"> </div>
-
+            
             <div id="ajax" class="container">
                 
             </div>

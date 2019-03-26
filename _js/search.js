@@ -38,6 +38,15 @@ function findTerm(){
 			results.push(jsonSearch[i]);
 		}
 		console.log(results);
+		///
+		ga('send', {
+			hitType: 'event',
+			eventCategory: 'Search',
+			eventAction: 'search',
+			eventLabel: searchTerm,
+			eventValue: results.length
+		});
+		///
 		displayResults(results);
 	}
 }
