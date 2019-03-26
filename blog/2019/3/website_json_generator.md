@@ -1,5 +1,5 @@
 [comment]: # (*.desc*An app that generates a JSON file for the posts on my website*.desc*)
-[comment]: # (*.tags*website, C#, WPF, JSON, github, finished-project*.tags*)
+[comment]: # (*.tags*website, C#, WPF, JSON, github, finished, featured*.tags*)
 [comment]: # (*.title*Website JSON Generator*.title*)
 [comment]: # (*.date*3-3-2019*.date*)
 
