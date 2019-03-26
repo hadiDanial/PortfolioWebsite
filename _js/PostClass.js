@@ -40,7 +40,7 @@ class Post {
         };
         //img.width = "40%";
         text.innerHTML += "<br><a href='" + this.path + "' style='text-decoration:underline; color:whitesmoke;' id='" + id + "' > <h3>" + this.title + "</h3></a>"; //onclick='loadLink("+i+")'
-        text.innerHTML += "<p>Description: " + this.description + "</p>";
+        text.innerHTML += "<p>" + this.description + "</p>";
         text.innerHTML += "<p><em>" + this.date + "</em></p>";
         var t = "";
         if (addTags) {
