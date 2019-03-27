@@ -28,6 +28,13 @@ function initSearch(){
 function findTerm(){
 	var results = [];
 	var searchTerm = document.getElementById("search_input").value.toLowerCase();
+	///
+	if ("ga" in window) {
+		tracker = ga.getAll()[0];
+		if (tracker)
+			tracker.send("event", "Search", "Search", searchTerm);
+	}	
+	///
 	if(searchTerm == "") displayResults(results);
 	else{
 		for(var i = 0; i < jsonSearch.length; i++){
@@ -38,15 +45,6 @@ function findTerm(){
 			results.push(jsonSearch[i]);
 		}
 		console.log(results);
-		///
-		ga('send', {
-			hitType: 'event',
-			eventCategory: 'Search',
-			eventAction: 'search',
-			eventLabel: searchTerm,
-			eventValue: results.length
-		});
-		///
 		displayResults(results);
 	}
 }
