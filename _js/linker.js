@@ -61,10 +61,10 @@ function addInfoJSON(i){
     //p = p.GetPostFromJSON(json,i);
     return p.BuildPostDiv(i);
 }
-function addInfoCustom(i, posts){
+function addInfoCustom(i, posts, addTags = false){
     var p = new Post(posts[i].title, posts[i].description, posts[i].date, posts[i].tags, posts[i].coverImage, posts[i].path);
     //p = p.GetPostFromJSON(posts,i);
-    return p.BuildPostDiv(i, true);
+    return p.BuildPostDiv(i, addTags);
 }
 async function fetchHtmlAsText(url) {
     return await (await fetch(url)).text();

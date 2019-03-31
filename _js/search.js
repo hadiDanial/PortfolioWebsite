@@ -73,16 +73,16 @@ async function displayResults(results){
 	else{
 		resultsBox.innerHTML = "<p>Found " + results.length + " results:</p><br>";
 		for(var i = 0; i < results.length; i+=3){
-			var div1 = addInfoCustom(i,results);
+			var div1 = addInfoCustom(i,results, true);
 			div1.classList = "search_result tile";
 			resultsBox.appendChild(div1);
 			if(i + 1 < results.length){
-				var div2 = addInfoCustom(i + 1,results);
+				var div2 = addInfoCustom(i + 1,results, true);
 				div2.classList = "search_result tile";
 				resultsBox.appendChild(div2);		
 			}
 			if(i + 2 < results.length){
-				var div3 = addInfoCustom(i + 2,results);
+				var div3 = addInfoCustom(i + 2,results, true);
 				div3.classList = "search_result tile";
 				resultsBox.appendChild(div3);
 			}
@@ -94,43 +94,3 @@ async function displayResults(results){
 		}
 	}
 }
-
-/*
-function findTerm(){
-	var results = [];
-	var searchTerm = document.getElementById("search_input").value.toLowerCase();
-	if(searchTerm == "") displayResults(results);
-	else{
-		for(var i = 0; i < jsonSearch.length; i++){
-			var tags = false;
-			for (var j = 0; j < jsonSearch[i].tags.length; j++)
-			if(jsonSearch[i].tags[j].toLowerCase().includes(searchTerm))
-			tags = true;
-			if(jsonSearch[i].title.toLowerCase().includes(searchTerm)||
-			jsonSearch[i].description.toLowerCase().includes(searchTerm)||
-			jsonSearch[i].date.toLowerCase().includes(searchTerm) || tags)
-			results.push(jsonSearch[i]);
-		}
-		console.log(results);
-		displayResults(results);
-	}
-}
-
-function findTag(jsonSearch, searchTerm){
-	var results = [];
-	var searchTerm = searchTerm.toLowerCase();
-	if(searchTerm == "") displayResults(results);
-	else{
-		for(var i = 0; i < jsonSearch.length; i++){
-			var tags = false;
-			for (var j = 0; j < jsonSearch[i].tags.length; j++)
-			if(jsonSearch[i].tags[j].toLowerCase().includes(searchTerm))
-			tags = true;
-			if(tags)
-			results.push(jsonSearch[i]);
-		}
-		console.log(results);
-		return results;
-	}
-	
-}*/
