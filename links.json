@@ -71,6 +71,26 @@
   "path": "\\blog\\2018\\8\\snakescape.html"
 },
 {
+  "title": "Gravity Buttons",
+  "description": "Gravity Buttons is a puzzle game that only uses one mechanic: changing the gravity direction.",
+  "date": "3.7.2018",
+  "tags": [
+    "unity",
+    "C#",
+    "game",
+    "OMGjam4",
+    "jam",
+    "affinity designer",
+    "graphics",
+    "art",
+    "2018",
+    "finished",
+    "featured"
+  ],
+  "coverImage": "\\blog\\2018\\7\\gravity_buttons_assets\\coverImg.png",
+  "path": "\\blog\\2018\\7\\gravity_buttons.html"
+},
+{
   "title": "Knightmare",
   "description": "My Ludum Dare 41 entry, Knightmare.",
   "date": "25.4.2018",
