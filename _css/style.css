@@ -308,7 +308,7 @@ p{
     object-fit: cover;
     margin: 0 auto;
     border-radius: 20px;
-    height:150px;
+    height:200px;
     cursor: pointer;
 }
 .tile h3:hover{
