@@ -32,7 +32,7 @@ I also didn't want to use any libraries or frameworks such as React or Angular. 
 
    1. I created a script that loads the content of the `.html` files into a div, similar to loading the header. The idea was that I'd dynamically load the content, so that I'd only have a handful of pages to take care of, and the rest would be generated on the fly as requested. I had a working prototype, but ended up scrapping it because it meant that the website would be a Single Page App, which is not really suited to a blog. I couldn't find an easy way to take care of the URL routing issue without a backend or using a framework. A blog wouldn't work well if you couldn't go to specific posts with a URL, would it? Having to search every time would get annoying quick.
 
-   2. The posts are written in `Markdown`. At one point, I wanted to skip converting the `Markdown` to `HTML` manually, and instead use something like [Showdown](http://showdownjs.com/) at runtime. I ended up scrapping that idea too, and converting the `Markdown` to `HTML` using an online converter such as [Dillinger](https://dillinger.io/) and uploading `.html` files.
+   2. The posts are written in `Markdown`. At one point, I wanted to skip converting the `Markdown` to `HTML` manually, and instead use something like [Showdown](http://showdownjs.com/) at runtime. I ended up scrapping that idea too, and converting the `Markdown` to `HTML` using an online converter such as [Dillinger](https://dillinger.io/) or the Markdown PDF extension in VSCode, making minor adjustments, and uploading `.html` files.
 
 ### Future changes:
 

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137014872-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		
+		gtag('config', 'UA-137014872-1');
+	</script>
+	
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Template</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="/_css/style.css" rel="stylesheet" type="text/css"/>
+	<script src="/_js/jquery-3.3.1.min.js" type="text/javascript"></script>
+	<script src="/_js/ProjectClass.js" type="text/javascript"></script>
+	<script src="/_js/LoadHeader.js" type="text/javascript"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#c8cdcd">
+	<meta name="theme-color" content="#ffffff">
+	<script> </script>      
+</head>
+<body  class="background" id="b">
+	<div class="content fadeIn">
+		<article>
+			
+			<h1 id="snakescape">Snakescape</h1>
+			<h4 id="august-16th-2018"><em>August 16th, 2018</em></h4>
+			<p>You can play <a href="https://krasse.itch.io/snakescape">Snakescape here</a>. Ludum Dare page <a href="https://ldjam.com/events/ludum-dare/42/hissterics">here</a>.</p>
+			<p><strong>Snakescape</strong> is another Ludum Dare game I worked on. We scored 273rd in the Overall category! The theme was <code>Running out of space</code>. I teamed up with some of the people I worked on <a href="../4/knightmare.html">Knightmare</a> with again. We didn't have an artist for this one, so I had to do the art myself.</p>
+			<img class="fullWidthImg" src="snakescape_assets/coverImg.png" alt="Snakescape Cover Image">
+			<p>Snakescape is an unconventional snake game - instead of the traditional snake gameplay, we opted for a puzzle oriented experience. With movement snapped to a custom grid system, the player has to reach the exit of each level, which is usually blocked and can only be opened by pressing a button. The player can eat eggs to get bigger, or consume the purple drops to get smaller. You have to manage your length, as getting too big can get you stuck, and being to short would block you from crossing pits. There are also vines that can kill you, and they grow with time, blocking off certain paths.</p>
+			<h3 id="the-grid-system">The Grid System</h3>
+			<p>We decided we wanted the snake's movement to be locked to a grid. I had some experience with creating those from previous projects, so I started by working on that. The <code>Grid</code> script takes a size, a <code>Cell</code> prefab, and a Scriptable Object that contains all the sprites for the different types of cells.</p>
+			<img class="halfWidthImg" src="snakescape_assets/gridInspector.png" alt="Grid inspector">
+				<img src="snakescape_assets/spritesSO.png" alt="Sprite SO">
+				<p>The <code>Grid</code> script spawns all the cells, and generates a <code>2D array</code> that is the size of the grid +2 in each axis, to account for the walls. It names all the cells per their location in the grid, and chooses a sprite for the cell. The sprite's rotation can also be controlled.</p>
+				<img class="halfWidthImg" src="snakescape_assets/cell.png" alt="Cell inspector">
+				<p>At the time, I wasn't familiar with editor scripting, so changing each cell's type was very cumbersome and time consuming - each cell had to be changed by itself, and then the entire grid had to be refreshed. I didn't have time to make it more user friendly, unfortunately, which I deeply regretted as we started making levels.</p>
+				<p>There's also a static <code>GridChecker</code>, that can find the <code>Cell</code> in a <code>Grid</code> by a <code>Vector2</code> location, check whether the cell can be used, and if the cell is an edge.</p>
+				<h3 id="the-snake">The Snake</h3>
+				<p>After the <code>Grid</code> system was done, it was time to create the <code>Snake</code> and define how it moves. The <code>Snake</code> script was responsible for snapping the snake to the grid, moving it on the grid/2D array, rotating the head, and growing and shrinking it.</p>
+				<p>The <code>SnakeController</code> script took in the player's input, and checked if the snake could move in that direction on the grid. If it could, it send instructions to the <code>Snake</code> script to move the head and update all the body parts.</p>
+				<h3 id="the-art">The Art</h3>
+				<img class="fullWidthImg" src="snakescape_assets/tiles.png" alt="Snakescape Art"><
+				<p>We didn't have an artist working with us on this project, and we didn't even have any decent placeholder art. So, on the last day, I opened up Affinity Designer and started working. I'm not an artist, but I know my way around design, and considering the game was based on tiles, I managed to create all the art for the game in ~6 hours. I'm actually happy with how it turned out, and it gave me some confidence regarding my abilities.</p>
+				<h3 id="looking-back">Looking Back</h3>
+				<p>Once again, as it is a jam game, there's a lot that could be improved upon.</p>
+				<ol>
+					<li>
+						<p>The level editing was a pain, and it really needs to be made more user friendly. I wasn't aware of Unity's Tilemap system at the time of this jam, but maybe that would have helped, and saved us a lot of time and trouble creating the custom grid system and manually creating the levels.</p>
+					</li>
+					<li>
+						<p>The gameplay turned out to be fine. There were no major bugs, so that's good, but we should have made a <em>lot</em> of extra levels. The ones we had were good, but the game ended up being too short.</p>
+					</li>
+				</ol>
+				
+				
+				
+			</article>
+		</div>
+		<footer>
+			<div class="line"> </div>
+			<a href="https://www.hadidanial.com">Hadi Danial</a>
+		</footer>
+	</body>
+	</html>
+	

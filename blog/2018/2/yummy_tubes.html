@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137014872-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		
+		gtag('config', 'UA-137014872-1');
+	</script>
+	
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Template</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="/_css/style.css" rel="stylesheet" type="text/css"/>
+	<script src="/_js/jquery-3.3.1.min.js" type="text/javascript"></script>
+	<script src="/_js/ProjectClass.js" type="text/javascript"></script>
+	<script src="/_js/LoadHeader.js" type="text/javascript"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#c8cdcd">
+	<meta name="theme-color" content="#ffffff">
+	<script> </script>      
+</head>
+<body  class="background" id="b">
+	<div class="content fadeIn">
+		<article>
+			<h1 id="yummy-tubes">Yummy Tubes</h1>
+			<h4 id="date"><em>February 5th, 2018</em></h4>
+			<p>Still high with the excitement of finishing the <a href="/blog/2018/1/gg2018.html">Global Game Jam</a>, I went home and started looking for something new to work on. I found the 29th <em>Weekly Game Jam</em>, and decided to try my hand at doing it. I had tried to do this jam several times before, but had never actually finished a project. But this time, I was determined. And so, I spent every single minute of my free time during that week working.</p>
+			<p>I found some reference images, and created this beautiful goo monster using Affinity Designer (I may have relied on the reference a bit too much... I'm not at artist).</p>
+			<img class="halfWidthImg" src="yummy_tubes_assets/goo.png" alt="Yummy Tubes Player - Goo">
+			<p>I had recently discovered a 2D animation application called <code>OpenToonz</code>, and I decided to give it a try. I managed to animate the goo character, creating rudimentary idle, moving and jumping animations.</p>
+			<p>I also created these tubes, and some graphics for the background/levels.</p>
+			<img src="yummy_tubes_assets/tubes.png" alt="Tubes">
+			<p>The gameplay itself is relatively simple; your goal is to collect a number of tubes in every level and return them to your hideout before you run out of health and die. You can only pick up one tube at a time, and you have to decide whether you want to return that tube to the hideout, or consume it and restore some of your health/time. Each color of tube also had some extra effect. The red one gave more health, one of them reversed the controls, and my favorite, the rainbow one, used Unity's post processing stack to change the hue of the entire game and change the song, giving a weird but fun vibe.</p>
+			<p>Looking back, there's a lot that could be improved. Mainly, the player controller, which feels too floaty, and the background art, as well as some minor bugs. But this was still the first solo game I ever finished, and for that, I am proud.</p>
+			<p>You can play <a href="https://hadidanial.itch.io/yummy-tubes">Yummy Tubes here</a>.</p>
+			
+		</article>
+	</div>
+	<footer>
+		<div class="line"> </div>
+		<a href="https://www.hadidanial.com">Hadi Danial</a>
+	</footer>
+</body>
+</html>

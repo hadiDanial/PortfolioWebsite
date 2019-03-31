@@ -8,7 +8,8 @@
     "webdev",
     "frontend",
     "js",
-    "finished-project"
+    "finished",
+    "featured"
   ],
   "coverImage": "\\blog\\2019\\3\\website_assets\\coverImg.png",
   "path": "\\blog\\2019\\3\\website.html"
@@ -23,7 +24,8 @@
     "WPF",
     "JSON",
     "github",
-    "finished-project"
+    "finished",
+    "featured"
   ],
   "coverImage": "\\blog\\2019\\3\\website_json_generator_assets\\coverImg.png",
   "path": "\\blog\\2019\\3\\website_json_generator.html"
@@ -37,11 +39,93 @@
     "C#",
     "editor",
     "path",
-    "path-creator",
+    "path creator",
     "github",
-    "finished project"
+    "finished",
+    "featured"
   ],
   "coverImage": "\\blog\\2019\\2\\path_creator_assets\\coverImg.png",
   "path": "\\blog\\2019\\2\\path_creator.html"
+},
+{
+  "title": "Snakescape",
+  "description": "My Ludum Dare 42 entry, Snakescape.",
+  "date": "16.8.2018",
+  "tags": [
+    "unity",
+    "C#",
+    "game",
+    "ludum dare",
+    "ldj",
+    "ld42",
+    "ldj42",
+    "jam",
+    "affinity designer",
+    "graphics",
+    "art",
+    "2018",
+    "finished",
+    "featured"
+  ],
+  "coverImage": "\\blog\\2018\\8\\snakescape_assets\\coverImg.png",
+  "path": "\\blog\\2018\\8\\snakescape.html"
+},
+{
+  "title": "Knightmare",
+  "description": "My Ludum Dare 41 entry, Knightmare.",
+  "date": "25.4.2018",
+  "tags": [
+    "unity",
+    "C#",
+    "game",
+    "ludum dare",
+    "ldj",
+    "ld41",
+    "ldj41",
+    "jam",
+    "2018",
+    "finished",
+    "featured"
+  ],
+  "coverImage": "\\blog\\2018\\4\\knightmare_assets\\coverImg.png",
+  "path": "\\blog\\2018\\4\\knightmare.html"
+},
+{
+  "title": "Yummy Tubes",
+  "description": "A small game for Weekly Game Jam 29",
+  "date": "5.2.2018",
+  "tags": [
+    "unity",
+    "C#",
+    "weekly game jam",
+    "wgj",
+    "wgj29",
+    "jam",
+    "affinity designer",
+    "graphics",
+    "art",
+    "2018",
+    "finished"
+  ],
+  "coverImage": "\\blog\\2018\\2\\yummy_tubes_assets\\coverImg.png",
+  "path": "\\blog\\2018\\2\\yummy_tubes.html"
+},
+{
+  "title": "Global Game Jam 2018",
+  "description": "My global game jam 2018 entry.",
+  "date": "28.1.2018",
+  "tags": [
+    "unity",
+    "C#",
+    "game",
+    "ggj",
+    "global game jam 2018",
+    "collab",
+    "jam",
+    "2018",
+    "finished"
+  ],
+  "coverImage": "\\blog\\2018\\1\\ggj2018_assets\\coverImg.png",
+  "path": "\\blog\\2018\\1\\ggj2018.html"
 }
 ]

@@ -19,12 +19,12 @@ Snakescape is an unconventional snake game - instead of the traditional snake ga
 
 We decided we wanted the snake's movement to be locked to a grid. I had some experience with creating those from previous projects, so I started by working on that. The `Grid` script takes a size, a `Cell` prefab, and a Scriptable Object that contains all the sprites for the different types of cells.
 
-![Snakescape Art](snakescape_assets/gridInspector.png)
-![Snakescape Art](snakescape_assets/spritesSO.png)
+![Grid inspector](snakescape_assets/gridInspector.png)
+![Sprite SO](snakescape_assets/spritesSO.png)
 
 The `Grid` script spawns all the cells, and generates a `2D array` that is the size of the grid +2 in each axis, to account for the walls. It names all the cells per their location in the grid, and chooses a sprite for the cell. The sprite's rotation can also be controlled.
 
-![Snakescape Art](snakescape_assets/cell.png)
+![Cell inspector](snakescape_assets/cell.png)
 
 At the time, I wasn't familiar with editor scripting, so changing each cell's type was very cumbersome and time consuming - each cell had to be changed by itself, and then the entire grid had to be refreshed. I didn't have time to make it more user friendly, unfortunately, which I deeply regretted as we started making levels.
 
