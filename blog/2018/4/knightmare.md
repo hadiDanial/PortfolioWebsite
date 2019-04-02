@@ -1,6 +1,6 @@
 [comment]: # (*.title*Knightmare*.title*)
 [comment]: # (*.desc*My Ludum Dare 41 entry, Knightmare.*.desc*)
-[comment]: # (*.tags*unity, C#, game, ludum dare, ldj, ld41, ldj41, jam, 2018, finished, featured*.tags*)
+[comment]: # (*.tags*unity, C#, game, ludum dare, ld41, jam, 2018, finished, featured*.tags*)
 [comment]: # (*.date*25-4-2018*.date*)
 
 # Knightmare
