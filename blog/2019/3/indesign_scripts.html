@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137014872-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		
+		gtag('config', 'UA-137014872-1');
+	</script>
+	
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>HD - inDesign Scripts</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="/_css/style.css" rel="stylesheet" type="text/css"/>
+	<script src="/_js/jquery-3.3.1.min.js" type="text/javascript"></script>
+	<script src="/_js/ProjectClass.js" type="text/javascript"></script>
+	<script src="/_js/LoadHeader.js" type="text/javascript"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#c8cdcd">
+	<meta name="theme-color" content="#ffffff">
+	<script> </script>      
+</head>
+<body  class="background" id="b">
+	<div class="content fadeIn">
+		<article>
+				<h1 id="indesign-scripts">inDesign Scripts</h1>
+				<h4 id="march-31st-2019"><em>March 31st, 2019</em></h4>
+				<p>I've been working with inDesign for several years now, and over time I've acquired a collection of useful scripts. Most of the time, I could find a way to accomplish what I needed to do, and sometimes I had to modify an existing script. A few times, though, I couldn't find anything, or I needed a specific task done, and so made my own scripts.</p>
+				<p>These were only used and tested with CS6.</p>
+				<p>I'll update this page if I create more scripts.</p>
+				<p>To download, click the download link, then right-click the page and select the <code>Save as...</code> option.</p>
+				<h3 id="bestfit">BestFit</h3>
+				<p>This script lets you choose a <code>PDF</code> file and select a size and final page count, and it fills the page with that file in a grid (gangup-repeat). The document values are hard coded in, as are the auto export location and the placed document's dimensions, so you'll have to go in and change those manually if you need to use this. In my case, those values never changed for the project, so I didn't need to figure out how to get the UI input to work.</p>
+				<p>Due to the specific nature of the job, I also didn't take orientation into account, so it doesn't find the best fit for given page size, it finds the best fit for the page size on the given orientation.</p>
+				<p>This script was made during the local elections, when I had to repeat this process dozens of time, and while I could use the impose software on the printer, it was time consuming to then export the files individually to another computer, not to mention error prone. I wrote this script, and it saved a lot of time, as it would quickly run and export everything neatly.</p>
+				<p>I got the <code>getPDFPageCount</code> and <code>macFileFilter</code> functions from somewhere else online.</p>
+				<p>Best Fit: <a href="indesign_scripts_assets/BestFit.jsx">Download</a></p>
+				<h3 id="rotate-objects">Rotate Objects</h3>
+				<p>These scripts were made when I had a large collection of images in a document and I needed to rotate them all randomly. I didn't feel like going through the 50+ images and rotating them manually, so I made these simple scripts. These rotate all selected (active) objects. You can easily change the values to whatever you want, they're pretty low as I wanted a more subtle effect.</p>
+				<p>Rotate Objects Randomly: <a href="indesign_scripts_assets/RotateObjectsRandomly.jsx">Download</a></p>
+				<p>Set Rotation to zero: <a href="indesign_scripts_assets/SetRotationToZero.jsx">Download</a></p>
+			
+		</article>
+	</div>
+	<footer>
+		<div class="line"> </div>
+		<a href="https://www.hadidanial.com">Hadi Danial</a>
+	</footer>
+</body>
+</html>

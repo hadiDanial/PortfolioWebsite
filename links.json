@@ -1,5 +1,18 @@
 [
 {
+  "title": "inDesign Scripts",
+  "description": "These are some small inDesign scripts I made at work to speed things up.",
+  "date": "31.3.2019",
+  "tags": [
+    "indesign",
+    "script",
+    ".jsx",
+    "finished"
+  ],
+  "coverImage": "\\blog\\2019\\3\\indesign_scripts_assets\\coverImg.png",
+  "path": "\\blog\\2019\\3\\indesign_scripts.html"
+},
+{
   "title": "Personal Website",
   "description": "Creating my personal website",
   "date": "3.3.2019",
@@ -56,9 +69,7 @@
     "C#",
     "game",
     "ludum dare",
-    "ldj",
     "ld42",
-    "ldj42",
     "jam",
     "affinity designer",
     "graphics",
@@ -79,6 +90,7 @@
     "C#",
     "game",
     "OMGjam4",
+    "one mechanic game jam",
     "jam",
     "affinity designer",
     "graphics",
@@ -99,9 +111,7 @@
     "C#",
     "game",
     "ludum dare",
-    "ldj",
     "ld41",
-    "ldj41",
     "jam",
     "2018",
     "finished",
@@ -118,7 +128,6 @@
     "unity",
     "C#",
     "weekly game jam",
-    "wgj",
     "wgj29",
     "jam",
     "affinity designer",
