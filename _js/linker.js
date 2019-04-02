@@ -73,7 +73,8 @@ async function fetchHtmlAsText(url) {
 
 async function ToggleProjects(){
     var ajax = document.getElementById("ajax");
-    var btn = document.getElementById("toggleProjectsBtn");
+    var btn1 = document.getElementById("toggleProjectsBtn1");
+    var btn2 = document.getElementById("toggleProjectsBtn2");
     var title = document.getElementById("page-title");
     ajax.classList = "container";
     ajax.innerHTML="";
@@ -84,13 +85,15 @@ async function ToggleProjects(){
     });
     if(!showAllProjects){
         title.innerHTML = "Finished Projects";
-        btn.value = "Show Featured Projects";
+        btn1.value = "Show Featured Projects";
+        btn2.value = "Show Featured Projects";
         await new Promise(r => setTimeout(r, 300));
         loadDoc(-1, "finished");
     }
     else{
         title.innerHTML = "Featured Projects";
-        btn.value = "Show Finished Projects";
+        btn1.value = "Show Finished Projects";
+        btn2.value = "Show Finished Projects";
         await new Promise(r => setTimeout(r, 300));
         loadDoc(-1, "featured");
     }
