@@ -1,4 +1,5 @@
 let json;
+var showAllProjects = false;
 
 function loadDoc(n = -1, tagFilter="") {
     var xhttp = new XMLHttpRequest();
@@ -68,4 +69,31 @@ function addInfoCustom(i, posts, addTags = false){
 }
 async function fetchHtmlAsText(url) {
     return await (await fetch(url)).text();
+}
+
+async function ToggleProjects(){
+    var ajax = document.getElementById("ajax");
+    var btn = document.getElementById("toggleProjectsBtn");
+    var title = document.getElementById("page-title");
+    ajax.classList = "container";
+    ajax.innerHTML="";
+    window.scroll({
+        top: 0, 
+        behavior: 'smooth'
+        
+    });
+    if(!showAllProjects){
+        title.innerHTML = "Finished Projects";
+        btn.value = "Show Featured Projects";
+        await new Promise(r => setTimeout(r, 300));
+        loadDoc(-1, "finished");
+    }
+    else{
+        title.innerHTML = "Featured Projects";
+        btn.value = "Show Finished Projects";
+        await new Promise(r => setTimeout(r, 300));
+        loadDoc(-1, "featured");
+    }
+    ajax.classList = "container fadeIn";
+    showAllProjects = !showAllProjects;
 }

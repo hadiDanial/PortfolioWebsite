@@ -207,6 +207,15 @@ p{
     white-space: normal; 
     overflow: hidden;
 }
+
+.btn{
+    font-family: inherit;
+    font-size: 15px;
+    color: #2E2E2E;
+    background-color: white;
+    width: 175px;
+    height: 30px;
+}
 .center_text p{
     text-align: center;
 
