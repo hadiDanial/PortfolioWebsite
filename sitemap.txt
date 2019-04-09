@@ -1,0 +1,15 @@
+﻿www.hadidanial.com/index.html
+www.hadidanial.com/projects.html
+www.hadidanial.com/blog.html
+www.hadidanial.com/search.html
+www.hadidanial.com/blog/2019/4/launching_website.html
+www.hadidanial.com/blog/2019/3/indesign_scripts.html
+www.hadidanial.com/blog/2019/3/website.html
+www.hadidanial.com/blog/2019/3/website_json_generator.html
+www.hadidanial.com/blog/2019/2/path_creator.html
+www.hadidanial.com/blog/2018/8/snakescape.html
+www.hadidanial.com/blog/2018/7/gravity_buttons.html
+www.hadidanial.com/blog/2018/4/knightmare.html
+www.hadidanial.com/blog/2018/2/yummy_tubes.html
+www.hadidanial.com/blog/2018/1/ggj2018.html
+

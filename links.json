@@ -1,5 +1,17 @@
 [
 {
+  "title": "Launching my Website",
+  "description": "Launching my personal website",
+  "date": "9.4.2019",
+  "tags": [
+    "website",
+    "webdev",
+    "hosting"
+  ],
+  "coverImage": "\\blog\\2019\\4\\launching_website_assets\\coverImg.png",
+  "path": "\\blog\\2019\\4\\launching_website.html"
+},
+{
   "title": "inDesign Scripts",
   "description": "These are some small inDesign scripts I made at work to speed things up.",
   "date": "31.3.2019",
