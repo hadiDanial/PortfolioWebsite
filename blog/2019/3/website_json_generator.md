@@ -14,3 +14,7 @@ This was a small project, made with `C#`, using `WPF`. It looks through a given 
 The `.json` file is then used to search the posts and generate links to them in the website.
 
 ![JSON Generator App](website_json_generator_assets/jsonGenApp.png)
+
+#### *April 9th, 2019*
+
+Added a button to generate a sitemap. The sitemap is just a collection of all the links in a text file.
