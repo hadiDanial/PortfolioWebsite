@@ -32,7 +32,7 @@ function findTerm(){
 	if ("ga" in window) {
 		tracker = ga.getAll()[0];
 		if (tracker)
-			tracker.send("event", "Search", "Search", searchTerm);
+			tracker.send("event", "Search Page", "Search", searchTerm);
 	}	
 	///
 	if(searchTerm == "") displayResults(results);
