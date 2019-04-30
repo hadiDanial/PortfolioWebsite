@@ -1,4 +1,5 @@
 User-agent: *
-Disallow:
-
+Disallow: /_js/
+Disallow: /_css/
+Disallow: /_img/
 Sitemap: http://www.hadidanial.com/sitemap.xml
