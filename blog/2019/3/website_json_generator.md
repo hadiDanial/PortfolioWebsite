@@ -2,10 +2,11 @@
 [comment]: # (*.tags*website, C#, WPF, JSON, github, finished, featured*.tags*)
 [comment]: # (*.title*Website JSON Generator*.title*)
 [comment]: # (*.date*3-3-2019*.date*)
+[comment]: # (*.lastMod*8-5-2019*.lastMod*)
 
 # Website JSON Generator
 
-#### *March 3rd, 2019*
+#### *March 3rd, 2019, updated May 5th, 2019*
 
 ![Cover Image](website_json_generator_assets/coverImg.png)
 
@@ -18,3 +19,7 @@ The `.json` file is then used to search the posts and generate links to them in 
 #### *April 9th, 2019*
 
 Added a button to generate a sitemap. The sitemap is just a collection of all the links in a text file.
+
+#### *May 5th, 2019*
+
+Added last modification date to the app, so that the sitemap stays up to date with any future modifications.

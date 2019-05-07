@@ -20,7 +20,7 @@
 	<script src="/_js/jquery-3.3.1.min.js" type="text/javascript"></script>
 	<script src="/_js/ProjectClass.js" type="text/javascript"></script>
 	<script src="/_js/LoadHeader.js" type="text/javascript"></script>
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,13 +38,13 @@
 			<h4 id="date"><em>April 25th, 2018</em></h4>
 			<p>You can play <a href="https://krasse.itch.io/ld41-2">Knightmare here</a>. Ludum Dare page <a href="https://ldjam.com/events/ludum-dare/41/knightmare">here</a>.</p>
 			<p>Ludum Dare time! This time, I teamed up with some people I met on Crowdforge and Discord, and we made <strong>Knightmare</strong>. The theme was <code>Combine 2 Incompatible Genres</code>.</p>
-			<img class="fullWidthImg" src="knightmare_assets/coverImg.png" alt="Knightmare Cover Image">
+			<img class="fullWidthImg pixel" src="knightmare_assets/coverImg.png" alt="Knightmare Cover Image">
 			<p>This was supposed to be a mix between tower defence and a side scrolling platformer. The base, a mysterious egg, is being attacked by monsters from both sides, and you have to defend it.</p>
-			<img src="knightmare_assets/egg_spritesheet.png" alt="Egg - base">
+			<img class="pixel" src="knightmare_assets/egg_spritesheet.png" alt="Egg - base">
 			<p>The gameplay itself was simple: The enemies spawn in waves, and move towards the egg. When they reach it, they deal damage and die. Your goal is to kill them before they do, making sure the egg is not destroyed. You play as the knight, and you can do a dash attack that does a small amount of damage. You can also control some medieval ranged weapons that spawned on some waves and use them to kill the enemies.</p>
 			<p>As each wave starts, an indicator flashes to indicate which direction the enemies will be coming from. When the base or enemies are damaged, they change color briefly.</p>
 			<p>The weapons only activate when you get within a certain distance from them, and they aim towards the mouse. Each type of weapon has a different speed, ammo amount, and strength. When all the ammo is used up, you need to leave the active zone in order for the weapon to recharge.</p>
-			<img src="knightmare_assets/weapons_01.png" alt="Weapons">
+			<img class="pixel" src="knightmare_assets/weapons_01.png" alt="Weapons">
 			<h3 id="the-wave-system-worked-like-this">The wave system worked like this:</h3>
 			<p>Each <code>Wave</code> consisted of an array of <code>MiniWaves</code>, a <code>Scriptable Object</code> that contained all the different enemy types, and a game object that held all of the wave's platforms and weapons.</p>
 			<p>Each <code>MiniWave</code> has an amount of enemies to spawn, which side to spawn them in, how long to wait between spawning the enemies, what type of enemy to spawn, whether the platforms and weapons should be activated or not, etc... as well as some strings to show when the wave starts and when it ends, which can be used as hints, or for story purposes.</p>

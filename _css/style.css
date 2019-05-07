@@ -23,7 +23,7 @@ html[data-theme='light']{
 }
 
 *{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin:auto;
     text-align: center;
     padding:0;
@@ -98,6 +98,7 @@ header{
 
 nav{
     background-color: inherit;
+    font-family: 'Montserrat', sans-serif;
 }
 nav .nav_active{
     background-color:var(--highlight-color);
@@ -200,13 +201,16 @@ h1{
     color: var(--text-color);
     font-size: 3em;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
 }
 
 h2{
     text-align: center;
     padding-left: 10px;
     color:var(--text-color);
-
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
 }
 h4{
     text-align: left;
@@ -214,11 +218,15 @@ h4{
     margin-bottom: 5px;
     font-weight: 100;
     padding-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
 }
 h3{
     text-align: left;
     color:var(--bg-color);
     width: 70%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
 }
 
 p{
@@ -437,6 +445,12 @@ p{
     border-radius: 0px;
 }
 
+.pixel{
+    image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
 .about{
     line-height: 2;
     margin: 40px;
@@ -614,3 +628,31 @@ background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1
     }
   }
   /**  /MOBILE  **/
+
+
+  /** HIGH RES **/
+  @media (min-width: 2000px){
+    header{
+        min-height: 150px;
+    }
+    
+nav ul{
+    min-height: 75px;
+    width: 30%;
+    padding-top: 50px;
+    padding-right: 100px;    
+}
+
+nav ul a{
+    min-height: inherit;
+    color:var(--text-color);
+    background-color: var(--header-color);
+    transition: 0.2s ease;
+}
+
+nav ul a:hover{
+    font-size: 28px;
+}
+
+  }
+  /** /HIGH RES **/
