@@ -1,6 +1,6 @@
 [comment]: # (*.title*inDesign Scripts*.title*)
 [comment]: # (*.desc*These are some small inDesign scripts I made at work to speed things up.*.desc*)
-[comment]: # (*.tags*indesign, script, .jsx, finished*.tags*)
+[comment]: # (*.tags*indesign, script, .jsx, post, finished*.tags*)
 [comment]: # (*.date*31-3-2019*.date*)
 
 # inDesign Scripts

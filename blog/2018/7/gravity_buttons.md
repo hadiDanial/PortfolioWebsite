@@ -1,6 +1,6 @@
 [comment]: # (*.title*Gravity Buttons*.title*)
 [comment]: # (*.desc*Gravity Buttons is a puzzle game that only uses one mechanic: changing the gravity direction.*.desc*)
-[comment]: # (*.tags*unity, C#, game, OMGjam4, one mechanic game jam, jam, affinity designer, graphics, art, 2018, finished, featured*.tags*)
+[comment]: # (*.tags*unity, C#, game, OMGjam4, one mechanic game jam, jam, affinity designer, graphics, art, 2018, project, finished, featured*.tags*)
 [comment]: # (*.date*3-7-2018*.date*)
 
 # Gravity Buttons

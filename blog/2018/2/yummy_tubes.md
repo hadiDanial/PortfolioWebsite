@@ -1,6 +1,6 @@
 [comment]: # (*.title*Yummy Tubes*.title*)
 [comment]: # (*.desc*A small game for Weekly Game Jam 29*.desc*)
-[comment]: # (*.tags*unity, C#, weekly game jam, wgj29, jam, affinity designer, graphics, art, 2018, finished*.tags*)
+[comment]: # (*.tags*unity, C#, weekly game jam, wgj29, jam, affinity designer, graphics, art, 2018, project, finished*.tags*)
 [comment]: # (*.date*5-2-2018*.date*)
 
 # Yummy Tubes

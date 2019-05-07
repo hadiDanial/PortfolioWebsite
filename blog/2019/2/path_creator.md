@@ -1,6 +1,6 @@
 [comment]: # (*.title*Path Creator*.title*)
 [comment]: # (*.desc*A fork of Sebastian Lague's Path Creator for Unity, with path generation and Path to SpriteShape conversion*.desc*)
-[comment]: # (*.tags*unity, C#, editor, path, path creator, github, finished, featured*.tags*)
+[comment]: # (*.tags*unity, C#, editor, path, path creator, github, project, finished, featured*.tags*)
 [comment]: # (*.date*10-2-2019*.date*)
 
 # Path Creator

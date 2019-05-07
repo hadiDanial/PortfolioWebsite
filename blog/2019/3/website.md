@@ -1,5 +1,5 @@
 [comment]: # (*.desc*Creating my personal website*.desc*)
-[comment]: # (*.tags*website, webdev, frontend, js, finished, featured*.tags*)
+[comment]: # (*.tags*website, webdev, frontend, js, project, finished, featured*.tags*)
 [comment]: # (*.title*Personal Website*.title*)
 [comment]: # (*.date*3-3-2019*.date*)
 
