@@ -602,6 +602,7 @@ background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1
     .tile{
         flex-basis: 100%;
     }
+
     .content{
         width: 90%;
     }
@@ -625,6 +626,9 @@ background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1
     }
     .menuBarsContainer {
     margin-right: 10px;
+    }
+    .tile img{    
+        object-fit: cover;
     }
   }
   /**  /MOBILE  **/
