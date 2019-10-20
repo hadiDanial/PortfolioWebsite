@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137014872-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		
+		gtag('config', 'UA-137014872-1');
+	</script>
+	
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>HD - Limberman Dev Log</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="Description" content="The making of Limberman, my entry for Ludum Dare 44.">
+	<link href="/_css/style.css" rel="stylesheet" type="text/css"/>
+	<script src="/_js/jquery-3.3.1.min.js" type="text/javascript"></script>
+	<script src="/_js/ProjectClass.js" type="text/javascript"></script>
+	<script src="/_js/LoadHeader.js" type="text/javascript"></script>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#c8cdcd">
+	<meta name="theme-color" content="#ffffff">
+	<script> </script>      
+</head>
+<body  class="background" id="b">
+	<div class="content fadeIn">
+		<article>
+			<h1 id="dot">Dot</h1>
+			<h4 id="october-20th-2019"><em>October 9th, 2019</em></h4>
+			<p>You can <a href="https://hadidanial.itch.io/dot">play the game here.</a>, Ludum Dare page <a href="https://ldjam.com/events/ludum-dare/45/dot">here</a>.</p>
+
+			<img class='fullWidthImg' src="dot_assets/Start.png" alt="Dot">
+
+			<p>Dot is a small game I made for the Ludum Dare 45 game jam. The theme for the jam was <code>Start with Nothing</code>. I had been trying to be more creative and do some Inktober prompts in the days prior to the jam, so when the theme was announced I immediately found a concept I liked. The idea was to go for an inky art style with hand-drawn graphics, to match with Inktober, and to start with a blank sheet of paper, revealing more and more of the world as you progress.</p>
+
+			<h3 id="the-art">The Art</h3>
+			<p>My main focus for this project was the art. It inspired the idea, and I wanted to try out a new style. I used Sketchbook to draw it all out, and I spent a lot of time going back and forth, tweaking the frames and adding new ones. This was my first time doing frame-by-frame animation, and also the first time I actually drew art for a game instead of using vector art.</p>
+			
+			<p>I had two sprite sheets for the art: one with color, and one without. The game starts with no color, and at a certain point in the game, the sprite sheet gets switched with the colored one, causing the world to suddenly become more colorful.</p>
+			<img class='halfWidthImg' src="dot_assets/art.jpg" alt="The Art">
+			<p>In the end, I'm happy with how the art turned out, and I'm looking forward to improving in this area in the future.</p>
+
+			<img class='halfWidthImg' src="dot_assets/sc1.png" alt="Game Screenshot">
+
+			<p>The level is made using Unity's Spriteshape, which made it easier to create a level in-engine. I still wanted to add variety to the way the platforms looked, so I used an uneven sprite for the line. It looked great, but it also unfortunately meant that the edge collider I used was not accurate, leading to confusion for the players and making the game harder than it should have been.</p>
+			
+			<img class='fullWidthImg' src="dot_assets/Line.png" alt="Ground Line Texture">
+
+			<p>To create the transition from black and white to colored for all objects in the game, I created a simple shader using <code>Shader Graph</code>, which in hindsight was not needed for what I ended up doing, and used the same material for everything, changing the texture in the material at the required point, which affected the entire game. I wanted to animate the transition, but I did not have time to do that.</p>
+			<p>As for the effect that reveals the world, it was simple <code>sprite masks</code> for each section, each with its own sorting order, and whenever I wanted to reveal the world, I would scale up the sprite mask with a coroutine. I used this mask I made in Affinity Designer, which created this neat effect where a sprite would be revealed, then disappear, then get revealed again.</p>
+
+			<img src="dot_assets/Mask.PNG" alt="Mask">
+			<img src="dot_assets/Mask_view.PNG" alt="Mask Cutout View">
+
+				<h3 id="player">Player</h3>
+				<p>As for the gameplay, I created several scripts to get everything working. It's a miracle everything ended up working in the end, as I had no chance to stop and test each feature and if it worked well with other parts of the system.</p>
+				<p>The <code>Player</code> has several states:</p>
+				<ol>
+					<li><p><strong>Sleep</strong>: This is the starting state of the player, and the one he goes into after death. The player can't move in this state.</p></li>
+					<li><p><strong>Move</strong>: In this state, the player can move, jump, and transition to any of the other states.</p></li>
+					<li><p><strong>Stomp</strong>: The player goes into this state when performing the stomp attack. All horizontal movement is cancelled, and the player now kills enemies it touches instead of dying. The only way to get out of this state is to touch the ground, or die by hitting an obstacle.</p></li>
+					<li><p><strong>Dash</strong>: This is the player's second attack. Here, the player turns into a spike and moves horizontally quickly for a small amount of time, killing enemies, then returns to the <code>Move</code> state.</p></li>
+				</ol>
+				<h3 id="enemies">Enemies</h3>
+				<p>Enemies are simplistic: They follow a waypoint system, moving from one to the next, and kill the player on contact. In the end, all of them either had only two waypoints, or were completely stationary due to time constraints in designing the levels.</p>
+				<h3 id="world-manager">World Manager</h3>
+				<p>To manage all the different sections that I wanted to reveal gradually, I created a <code>World Manager</code>, which has an array of <code>World States</code>. The states were more like sections of the world, and each had a checkpoint that, when reached, would either trigger the next state to load, or trigger the win message, depending on whether or not it was the last state in the manager, as well as a list of all the enemies contained in that section.</p>
+				<p>When a state was activated by the manager, enemies were reset, the level would be enabled, and the mask hiding the level would begin scaling up.</p>
+				<p>The world manager kept track of the current state, and would reset the player to the last reached checkpoint on death, as well as set the Player State to <strong>Sleep</strong> and tell the current world state to reset itself, it's enemies, and then reveal the state again.</p>
+				<h3 id="other">Other</h3>
+				<p>As for miscellaneous features, I added an interest marker script to the player, which was supposed to show the play where new sections of the world had been revealed, but I didn't have time to implement it into the gameplay, and a tip manager, which displayed tips whenever the player got into certain areas.</p>
+				<h3 id="looking-back">Looking back</h3>
+				<p>A lot of the comments criticized the controls, which is a valid complaint, and felt that the player's hitbox was too big, which was caused by the inaccurate colliders for the platforms.</p>
+				<p>Another big complaint was the lack of music and sound effects, which I regret, as it would have made the game that much better. I tried to record my own, but I unfortunately have no experience with editing audio, and I ran out of time before I could find something I liked.</p>
+				<p>Other than that, the level design was somewhat unclear, in that some players didn't realize that sections of the world had been revealed in areas you had already crossed after the first checkpoint. This could have been fixed if I had fully implemented the &quot;Interest Marker&quot; system I had planned.</p>
+				<p>The level itself was too short, and not well designed, especially the last enemy on the slope. I introduced the player's abilities, but didn't give players the chance to learn to use them. The first enemy, right after learning to dash, can be jumped over, when it's meant to be dashed through. This means that players won't learn to dash, making it near impossible to kill the enemy on the slope. I had hoped to create more levels, and make a longer game, but I barely managed to create the level in the last few hours of the jam, while hooking all the systems together.</p>
+				<img class='fullWidthImg' src="dot_assets/sc2.png" alt="Game Screenshot">
+				<p>I spent around 18 hours working on the game, and overall, I'm happy with this entry, especially the art. A <strong>lot</strong> could have been done better, but for the time I had, I'm happy.</p>
+				<img class='halfWidthImg' src="dot_assets/toggl.PNG" alt="Time Spent">
+				
+			</article>
+		</div>
+		<footer>
+			<div class="line"> </div>
+			<a href="http://www.hadidanial.com">Hadi Danial</a>
+		</footer>
+	</body>
+	</html>
+	

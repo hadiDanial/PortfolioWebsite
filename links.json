@@ -1,12 +1,52 @@
 [
 {
+  "title": "Dot",
+  "description": "My Ludum Dare 45 entry, Dot",
+  "date": "20.10.2019",
+  "lastMod": "20.10.2019",
+  "tags": [
+    "unity",
+    "C#",
+    "game",
+    "ludum dare",
+    "ld45",
+    "jam",
+    "2019",
+    "art"
+  ],
+  "coverImage": "\\blog\\2019\\10\\dot_assets\\coverImg.png",
+  "path": "\\blog\\2019\\10\\dot.html"
+},
+{
+  "title": "Limberman",
+  "description": "My Ludum Dare 44 entry, Limberman.",
+  "date": "21.5.2019",
+  "lastMod": "21.5.2019",
+  "tags": [
+    "unity",
+    "C#",
+    "game",
+    "ludum dare",
+    "ld44",
+    "jam",
+    "2019",
+    "project",
+    "finished",
+    "featured"
+  ],
+  "coverImage": "\\blog\\2019\\5\\limberman_assets\\coverImg.png",
+  "path": "\\blog\\2019\\5\\limberman.html"
+},
+{
   "title": "Launching my Website",
   "description": "Launching my personal website",
   "date": "9.4.2019",
+  "lastMod": "9.4.2019",
   "tags": [
     "website",
     "webdev",
-    "hosting"
+    "hosting",
+    "post"
   ],
   "coverImage": "\\blog\\2019\\4\\launching_website_assets\\coverImg.png",
   "path": "\\blog\\2019\\4\\launching_website.html"
@@ -15,10 +55,12 @@
   "title": "inDesign Scripts",
   "description": "These are some small inDesign scripts I made at work to speed things up.",
   "date": "31.3.2019",
+  "lastMod": "31.3.2019",
   "tags": [
     "indesign",
     "script",
     ".jsx",
+    "post",
     "finished"
   ],
   "coverImage": "\\blog\\2019\\3\\indesign_scripts_assets\\coverImg.png",
@@ -28,11 +70,13 @@
   "title": "Personal Website",
   "description": "Creating my personal website",
   "date": "3.3.2019",
+  "lastMod": "3.3.2019",
   "tags": [
     "website",
     "webdev",
     "frontend",
     "js",
+    "project",
     "finished",
     "featured"
   ],
@@ -43,12 +87,15 @@
   "title": "Website JSON Generator",
   "description": "An app that generates a JSON file for the posts on my website",
   "date": "3.3.2019",
+  "lastMod": "8.5.2019",
   "tags": [
     "website",
     "C#",
     "WPF",
     "JSON",
     "github",
+    "project",
+    "2019",
     "finished",
     "featured"
   ],
@@ -59,6 +106,7 @@
   "title": "Path Creator",
   "description": "A fork of Sebastian Lague's Path Creator for Unity, with path generation and Path to SpriteShape conversion",
   "date": "10.2.2019",
+  "lastMod": "10.2.2019",
   "tags": [
     "unity",
     "C#",
@@ -66,6 +114,7 @@
     "path",
     "path creator",
     "github",
+    "project",
     "finished",
     "featured"
   ],
@@ -76,6 +125,7 @@
   "title": "Snakescape",
   "description": "My Ludum Dare 42 entry, Snakescape.",
   "date": "16.8.2018",
+  "lastMod": "16.8.2018",
   "tags": [
     "unity",
     "C#",
@@ -97,6 +147,7 @@
   "title": "Gravity Buttons",
   "description": "Gravity Buttons is a puzzle game that only uses one mechanic: changing the gravity direction.",
   "date": "3.7.2018",
+  "lastMod": "3.7.2018",
   "tags": [
     "unity",
     "C#",
@@ -108,6 +159,7 @@
     "graphics",
     "art",
     "2018",
+    "project",
     "finished",
     "featured"
   ],
@@ -118,6 +170,7 @@
   "title": "Knightmare",
   "description": "My Ludum Dare 41 entry, Knightmare.",
   "date": "25.4.2018",
+  "lastMod": "25.4.2018",
   "tags": [
     "unity",
     "C#",
@@ -126,6 +179,7 @@
     "ld41",
     "jam",
     "2018",
+    "project",
     "finished",
     "featured"
   ],
@@ -136,6 +190,7 @@
   "title": "Yummy Tubes",
   "description": "A small game for Weekly Game Jam 29",
   "date": "5.2.2018",
+  "lastMod": "5.2.2018",
   "tags": [
     "unity",
     "C#",
@@ -146,6 +201,7 @@
     "graphics",
     "art",
     "2018",
+    "project",
     "finished"
   ],
   "coverImage": "\\blog\\2018\\2\\yummy_tubes_assets\\coverImg.png",
@@ -155,6 +211,7 @@
   "title": "Global Game Jam 2018",
   "description": "My global game jam 2018 entry.",
   "date": "28.1.2018",
+  "lastMod": "28.1.2018",
   "tags": [
     "unity",
     "C#",
@@ -162,6 +219,7 @@
     "ggj",
     "global game jam 2018",
     "collab",
+    "project",
     "jam",
     "2018",
     "finished"

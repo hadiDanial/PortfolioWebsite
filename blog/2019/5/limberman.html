@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137014872-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		
+		gtag('config', 'UA-137014872-1');
+	</script>
+	
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>HD - Limberman Dev Log</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="Description" content="The making of Limberman, my entry for Ludum Dare 44.">
+	<link href="/_css/style.css" rel="stylesheet" type="text/css"/>
+	<script src="/_js/jquery-3.3.1.min.js" type="text/javascript"></script>
+	<script src="/_js/ProjectClass.js" type="text/javascript"></script>
+	<script src="/_js/LoadHeader.js" type="text/javascript"></script>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#c8cdcd">
+	<meta name="theme-color" content="#ffffff">
+	<script> </script>      
+</head>
+<body  class="background" id="b">
+	<div class="content fadeIn">
+		<article>
+			<h1 id="limberman-dev-log">Limberman Dev Log</h1>
+			<h4 id="may-21th-2019"><em>May 21th, 2019</em></h4>
+			<p>You can play <a href="https://krasse.itch.io/limberman">Limberman here</a>. Ludum Dare page <a href="https://ldjam.com/events/ludum-dare/44/limberman">here</a>.</p>
+			<p>Limberman is a short dungeon crawler made in 3 days for LD44. In this game, your goal is to get through all the rooms in the game, killing all the enemies. The idea was that you'd have to trade your limbs in order to be able to buy weapons, which would give you debuffs such as slower movement speed or less health, but also give you more firepower. Unfortunately, we overscoped, and so ended up with a buggy shop that doesn't encourage the player to try and strategize. Should have definitely went for a simpler project. But this was still plenty of fun to work on, and it was pretty challenging!</p>
+			<img class="fullWidthImg pixel" src="limberman_assets/coverImg.png" alt="Limberman Cover Image"></p>
+			
+			<p>There was a lot to do for this game, and I worked on the <a href="#player-controller">Player Controller</a>, the <a href="#enemies">Enemies</a>, the <a href="#weapons">Weapons</a>, and the <a href="#the-room-system">Room system</a>, the tilemap, and several miscellaneous things, and the other programmer handled all character animations, sounds, the shop, UI, and game manager.</p>
+			<h3 id="player-controller">Player Controller</h3>
+			<p>I started off by working on the player controller while the other programmer worked on creating procedural animations. The player controller handles all player movement and input, as well as manages the <code>Player Visuals</code> script that controls the animations to behave according to the current state. The player movement is relatively simple: I get input from the player, normalize it, and set the velocity of the rigidbody accordingly. This also calculates the angle necessary for each weapon to aim towards the mouse.</p>
+			<h3 id="enemies">Enemies</h3>
+			<p>The enemies have two variations: <code>Ranged</code> and <code>Melee</code>. They share the same parent class with the basic functionality, and each type has different movement and attack behavior. They also use the same animation system as the Player.</p>
+			<ol>
+				<li>
+					<p><strong>Ranged Enemies:</strong> Ranged enemies move in a random direction, stay there for a number of seconds while shooting at the player, either actively targeting them or shooting at their last location before the enemy stopped moving. Then they move again and repeat the cycle.</p>
+				</li>
+				<li>
+					<p><strong>Melee Enemies:</strong> These always try to move towards the player, but they don't have any pathfinding, so they try to target a location either to the left or right of the player and move there. When they get close enough, the attack animation is triggered, and if their sword hits the player, it deals damage.</p>
+				</li>
+			</ol>
+			<h3 id="weapons">Weapons</h3>
+			<p>The weapons in this game are very simplistic: they shoot <code>x</code>-bullets per second, and each bullet is a prefab that has a certain speed and deals a certain amount of damage.
+				The rotation of the weapons get set automatically. For the player, the rotation is set towards the camera, with some clamping so you can't shoot directly above or below yourself, and for the ranged enemies, the weapons were aimed towards a target's current location.</p>
+				<h3 id="swords">Swords</h3>
+				<p>The <code>Sword</code> script is just an <code>OnTriggerEnter2D</code> function that deals a certain amount of damage to whatever it hits when the attack animation is played. The collider for the sword only gets activated at certain points during the animation. They also have a trail renderer for an added visual effect.</p>
+				<h3 id="the-room-system">The Room System</h3>
+				<p>The goal was to have the player travel through a set of hand crafted levels that were placed randomly, so each playthrough would be different. I whipped this up first thing on the last day.</p>
+				<ol>
+					<li>
+						<p><strong>Room:</strong> Each room has a list of doors and a list of enemies. When all the enemies are defeated, all the doors in the room are unlocked and the room status is set to done.</p>
+					</li>
+					<li>
+						<p><strong>Room Manager:</strong> The manager is responsible for randomly placing the rooms in a grid layout, as well as assign the doors of each room to transport the player to the correct room based on the new layout. The rooms are placed in a 2D array and the location of each room is then calculated and set.</p>
+					</li>
+					<li>
+						<p><strong>Door:</strong> Each room has 4 doors, and each door can have one of 3 possible states: Locked, unlocked, and inactive. They also have a set of sprites for each state.
+							Doors are set as <code>inactive</code> if there are no more rooms in the direction the door is leading. Otherwise, the door's state would be triggered from the <code>Room</code> script.</p>
+						</li>
+					</ol>
+					<h3 id="tilemap">Tilemap</h3>
+					<p>For creating the levels, we used Unity's Tilemap system, along with Rule Tiles from the 2D Extras package from github, which made it easy to edit levels. We ended up only creating rectangular levels, so we didn't take advantage of the system.</p>
+					<h3 id="looking-back">Looking back</h3>
+					<p>This was a very fun, yet stressful project. If I had to do it over again, I'd cut down on the scope, and rework the limb system, and create more varied level types, instead of all rectangular rooms. But for a jam, I'm happy with how much we got done.</p>
+					<p>I have recorded (almost) all of the work, and I might be uploading a timelapse video eventually.</p>
+				</article>
+			</div>
+			<footer>
+				<div class="line"> </div>
+				<a href="http://www.hadidanial.com">Hadi Danial</a>
+			</footer>
+		</body>
+		</html>
+		

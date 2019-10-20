@@ -1,17 +1,17 @@
 [comment]: # (*.title*Limberman Dev Log*.title*)
 [comment]: # (*.desc*Developement Log and Postmortem for Limberman*.desc*)
 [comment]: # (*.tags*unity, C#, game, ludum dare, ld44, jam, 2019, post*.tags*)
-[comment]: # (*.date*12-5-2019*.date*)
+[comment]: # (*.date*21-5-2019*.date*)
 
 # Limberman Dev Log
 
-#### *May 12th, 2019*
+#### *May 21th, 2019*
 
 You can [play the game here.](http://www.hadidanial.com/blog/2019/5/limberman.html)
 
-## Devlog
+### Devlog
 
-There was a lot to do for this game, and I worked on the [Player Controller](#PlayerController), the [Enemies](#Enemies), the Weapons, and the Room system, the tilemap, and several miscellaneous things, and the other programmer handled all character animations, sounds, the shop, UI, and game manager.
+There was a lot to do for this game, and I worked on the [Player Controller](#PlayerController), the [Enemies](#Enemies), the [Weapons](#Weapons), and the [Room system](#RoomSystem), the tilemap, and several miscellaneous things, and the other programmer handled all character animations, sounds, the shop, UI, and game manager.
 
 ### Player Controller
 
@@ -26,10 +26,30 @@ The enemies have two variations: `Ranged` and `Melee`. They share the same paren
 
 ### Weapons
 
+The weapons in this game are very simplistic: they shoot `x`-bullets per second, and each bullet is a prefab that has a certain speed and deals a certain amount of damage.
+The rotation of the weapons get set automatically. For the player, the rotation is set towards the camera, with some clamping so you can't shoot directly above or below yourself, and for the ranged enemies, the weapons were aimed towards a target's current location.
 
+#### Swords
 
-## Postmortem
+The `Sword` script is just an `OnTriggerEnter2D` function that deals a certain amount of damage to whatever it hits when the attack animation is played. The collider for the sword only gets activated at certain points during the animation. They also have a trail renderer for an added visual effect.
 
-I have also recorded (almost) all of the work, and I might be uploading a timelapse video eventually.
+### The Room System
+
+The goal was to have the player travel through a set of hand crafted levels that were placed randomly, so each playthrough would be different. I whipped this up first thing on the last day.
+
+1. **Room:** Each room has a list of doors and a list of enemies. When all the enemies are defeated, all the doors in the room are unlocked and the room status is set to done.
+2. **Room Manager:** The manager is responsible for randomly placing the rooms in a grid layout, as well as assign the doors of each room to transport the player to the correct room based on the new layout. The rooms are placed in a 2D array and the location of each room is then calculated and set.
+3. **Door:** Each room has 4 doors, and each door can have one of 3 possible states: Locked, unlocked, and inactive. They also have a set of sprites for each state.
+Doors are set as `inactive` if there are no more rooms in the direction the door is leading. Otherwise, the door's state would be triggered from the `Room` script.
+
+### Tilemap
+
+For creating the levels, we used Unity's Tilemap system, along with Rule Tiles from the 2D Extras package from github, which made it easy to edit levels.
+
+### Looking back
+
+This was a very fun, yet stressful project. If I had to do it over again, I'd cut down on the scope, and rework the limb system, and create more varied level types, instead of all rectangular rooms. But for a jam, I'm happy with how much we got done.
+
+I have recorded (almost) all of the work, and I might be uploading a timelapse video eventually.
 
 ![Limberman](limberman_assets/gameplay.png)
