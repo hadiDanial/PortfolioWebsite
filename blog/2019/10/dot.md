@@ -1,6 +1,6 @@
 [comment]: # (*.title*Dot*.title*)
 [comment]: # (*.desc*My Ludum Dare 45 entry, Dot*.desc*)
-[comment]: # (*.tags*unity, C#, game, ludum dare, ld45, jam, 2019, art*.tags*)
+[comment]: # (*.tags*unity, C#, game, ludum dare, ld45, jam, 2019, art, project, finished, featured*.tags*)
 [comment]: # (*.date*20-10-2019*.date*)
 
 # Dot

@@ -12,7 +12,10 @@
     "ld45",
     "jam",
     "2019",
-    "art"
+    "art",
+    "project",
+    "finished",
+    "featured"
   ],
   "coverImage": "\\blog\\2019\\10\\dot_assets\\coverImg.png",
   "path": "\\blog\\2019\\10\\dot.html"
@@ -137,6 +140,7 @@
     "graphics",
     "art",
     "2018",
+    "project",
     "finished",
     "featured"
   ],
