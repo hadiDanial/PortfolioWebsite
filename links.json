@@ -1,5 +1,26 @@
 [
 {
+  "title": "Global Game Jam 2020 - Cerebral Calibration",
+  "description": "My global game jam 2020 entry.",
+  "date": "3.2.2020",
+  "lastMod": "3.2.2020",
+  "tags": [
+    "unity",
+    "C#",
+    "game",
+    "ggj",
+    "global game jam 2020",
+    "collab",
+    "project",
+    "jam",
+    "2020",
+    "finished",
+    "featured"
+  ],
+  "coverImage": "\\blog\\2020\\1\\ggj2020_assets\\coverImg.png",
+  "path": "\\blog\\2020\\1\\ggj2020.html"
+},
+{
   "title": "Dot",
   "description": "My Ludum Dare 45 entry, Dot",
   "date": "20.10.2019",
