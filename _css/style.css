@@ -243,10 +243,16 @@ p{
 .btn{
     font-family: inherit;
     font-size: 15px;
-    color: var(--bg-color);
     background-color:var(--highlight-color);
-    width: 175px;
-    height: 30px;
+    color:var(--header-color);
+    width: 200px;
+    height: 35px;
+    transition: 0.2s;
+}
+.btn:hover
+{
+    background-color:var(--nav-hover-color);
+    transform: scale(1.02);
 }
 .center_text p{
     text-align: center;

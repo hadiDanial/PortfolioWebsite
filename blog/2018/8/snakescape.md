@@ -1,6 +1,6 @@
 [comment]: # (*.title*Snakescape*.title*)
 [comment]: # (*.desc*My Ludum Dare 42 entry, Snakescape.*.desc*)
-[comment]: # (*.tags*unity, C#, game, ludum dare, ld42, jam, affinity designer, graphics, art, 2018, project, finished, featured*.tags*)
+[comment]: # (*.tags*unity, C#, game, ludum dare, ld42, jam, affinity designer, graphics, art, 2018, project, finished*.tags*)
 [comment]: # (*.date*16-8-2018*.date*)
 
 # Snakescape

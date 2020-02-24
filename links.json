@@ -1,5 +1,24 @@
 [
 {
+  "title": "Grid",
+  "description": "My entry to the GamesPlusJam3.",
+  "date": "24.2.2020",
+  "lastMod": "24.2.2020",
+  "tags": [
+    "unity",
+    "C#",
+    "game",
+    "gamesplusjam 3",
+    " project",
+    "jam",
+    "2020",
+    "finished",
+    "featured"
+  ],
+  "coverImage": "\\blog\\2020\\2\\grid_assets\\coverImg.png",
+  "path": "\\blog\\2020\\2\\grid.html"
+},
+{
   "title": "Global Game Jam 2020 - Cerebral Calibration",
   "description": "My global game jam 2020 entry.",
   "date": "3.2.2020",
@@ -55,8 +74,7 @@
     "jam",
     "2019",
     "project",
-    "finished",
-    "featured"
+    "finished"
   ],
   "coverImage": "\\blog\\2019\\5\\limberman_assets\\coverImg.png",
   "path": "\\blog\\2019\\5\\limberman.html"
@@ -101,8 +119,7 @@
     "frontend",
     "js",
     "project",
-    "finished",
-    "featured"
+    "finished"
   ],
   "coverImage": "\\blog\\2019\\3\\website_assets\\coverImg.png",
   "path": "\\blog\\2019\\3\\website.html"
@@ -162,8 +179,7 @@
     "art",
     "2018",
     "project",
-    "finished",
-    "featured"
+    "finished"
   ],
   "coverImage": "\\blog\\2018\\8\\snakescape_assets\\coverImg.png",
   "path": "\\blog\\2018\\8\\snakescape.html"
@@ -205,8 +221,7 @@
     "jam",
     "2018",
     "project",
-    "finished",
-    "featured"
+    "finished"
   ],
   "coverImage": "\\blog\\2018\\4\\knightmare_assets\\coverImg.png",
   "path": "\\blog\\2018\\4\\knightmare.html"
