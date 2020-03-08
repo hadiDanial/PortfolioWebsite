@@ -13,47 +13,21 @@ Lash is my game for the 7DRL 2020 jam. 7DRL stands for 7-day rogue like. I decid
 
 I started with the player controller from `Grid`, and started to modify it to allow player control of the gravity and simplify it. I ended up reworking it and getting rid of unnecessary parts, basically gutting the system and getting a simple gravity controller instead.
 
-![GamesPlusJam 3 Theme](lash_assets/theme.png)
-
-I had just come out of my exam period, and after studying linear algebra for my last exam, which included watching [3Blue1Brown's series](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) on the subject, this felt like a fitting theme, and I was excited to get to work!
-
-The idea was to make a platformer where the movement and gravity constantly change directions, based on the grid and how it gets transformed.
+This game contains some of the most complex systems I've made so far. There's a dungeon generator, enemies with some very rudimentary follow behavior, an animation controller that's more involved than I've ever made, I learned how to use the new input system, and for the first time ever, I implemented a simple difficulty system.
 
 ![Screenshot](lash_assets/SC1.png)
 
 Instead of the usual left and right movement, the player would move parallel to the transformed x-axis on the grid, and jump along the transformed y-axis.
 
-### The Grid
+### The Dungeon Generator
 
-![Screenshot](lash_assets/grid.png)
+The dungeon generator generates a dungeon where the size is dependant on the difficulty.
 
-The grid is a sprite with a custom shader made in Shader Graph.
-
-![Grid Shader](lash_assets/GridShader.png)
-
-The `Tiling and Offset` node allows me to repeat the grid along the entire object, the xAxis and yAxis properties get updated by the `GridManager` script, and using matrix multiplication, they allow me to modify the grid in real time to rotate, shear, or transform it in any way I wish.
-
-![Grid Examples](lash_assets/Examples.png)
-
-The `GridManager` animates the transformation. and calculates the gravity direction and movement axis like so:
-
-`gravity = -(vertical.x * Vector2.up - vertical.y * Vector2.right).normalized * gravityStrength;`
-
-`movementAxis = -(horizontal.x * Vector2.up - horizontal.y * Vector2.right).normalized;`
-
-Where vertical is the first column of the matrix, and horizontal is the second column. x is the first row, and y is the second row.
-
-The shader allows me to control the width of the lines of the grid, so I used that to animate the grid, and it resulted in a cool effect to transition from the menu to the game.
+The first two rooms in the dungeon are always constant, as is the boss room, though it gets spawned in a random place each time. All the other rooms in the dungeon are randomly chosen from a list of rooms, and the layout of the dungeon is also randomly generated. All adjacent rooms are connected to each other, and the doors are locked until all the enemies in the room are killed.
 
 ### The Player
 
-The player controller was a big challenge. I wanted the player's movement and jump to be dependant on the current grid axis. I ended up calculating the movement as if I were still using the standard XY plane, and then transforming it to the current movement plane by multiplying the movement/gravity axis by the magnitude of the movement vector.
-
-The player checks if it is grounded by casting a couple of rays in the direction of the gravity vector. At first, I wasn't planning on rotating the player, so I had ground check objects on each side of the player and activating one of them based on the gravity direction, and disabling the rest. In the end, though, this wasn't needed as I was rotating the player to face the gravity direction.
-
-### Pickups
-
-The pickups each held two `Vector2` objects: The vertical and horizontal targets. When triggered, the grid changes to follow these two vectors, and the gravity, movement axis and player rotation followed.
+The player controller started off as the controller from `Grid`, but I 
 
 ### Looking Back
 
