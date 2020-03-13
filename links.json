@@ -1,5 +1,24 @@
 [
 {
+  "title": "Lash",
+  "description": "My entry to the 7DRL jam 2020.",
+  "date": "13.3.2020",
+  "lastMod": "13.3.2020",
+  "tags": [
+    "unity",
+    "C#",
+    "game",
+    "7DRL",
+    "project",
+    "jam",
+    "2020",
+    "finished",
+    "featured"
+  ],
+  "coverImage": "\\blog\\2020\\3\\lash_assets\\coverImg.png",
+  "path": "\\blog\\2020\\3\\lash.html"
+},
+{
   "title": "Grid",
   "description": "My entry to the GamesPlusJam3.",
   "date": "24.2.2020",

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137014872-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		
+		gtag('config', 'UA-137014872-1');
+	</script>
+	
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>HD - Lash</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="Description" content="DESCRIPTION.">
+	<link href="/_css/style.css" rel="stylesheet" type="text/css"/>
+	<script src="/_js/jquery-3.3.1.min.js" type="text/javascript"></script>
+	<script src="/_js/ProjectClass.js" type="text/javascript"></script>
+	<script src="/_js/LoadHeader.js" type="text/javascript"></script>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#c8cdcd">
+	<meta name="theme-color" content="#ffffff">
+	<script> </script>      
+</head>
+<body  class="background" id="b">
+	<div class="content fadeIn">
+		<article>
+			<h1 id="lash">Lash</h1>
+			<h4 id="march-7th-2020"><em>March 13th, 2020</em></h4>
+			<p>You can play Lash <a href="https://hadidanial.itch.io/lash">here</a>.</p>
+			<p>Lash is my game for the 7DRL 2020 jam. 7DRL stands for 7-day rogue like. I decided to take my previous game, <a href="http://hadidanial.com/blog/2020/2/grid.html">Grid</a>, and expand on the gravity mechanic in a rogue-like dungeon crawler. I spent a week on this, and it was fun, yet surprisingly complex.</p>
+			<img class="halfWidthImg pixel" src="lash_assets/Screenshot.png" alt="Screenshot">
+			<p>In this game, the player can choose their gravity direction, and can also &quot;lash&quot; enemies and objects around to different directions. Yes, this was inspired by The Stormlight Archive.</p>
+			<p>I started with the player controller from <code>Grid</code>, and started to modify it to allow player control of the gravity. I ended up reworking it and getting rid of unnecessary parts, basically gutting the system and getting a simple gravity controller instead.</p>
+			<p>This game contains some of the most complex systems I've made so far. There's a dungeon generator, enemies with some very rudimentary follow behavior, an animation controller that's more involved than I've ever made, I learned how to use the new input system, and for the first time ever, I implemented a simple difficulty system.</p>
+			<h3 id="the-dungeon-generator">The Dungeon Generator</h3>
+			<p>The dungeon generation is controlled by the difficulty setting: the higher the difficulty, the more rooms spawn, and the more branching is allowed.</p>
+			<p>The first two rooms in the dungeon are always constant, as is the boss room, though it gets spawned in a random place each time. All the other rooms in the dungeon are randomly chosen from a list of rooms, and the layout of the dungeon is also randomly generated.</p>
+			<p>After the layout is generated, all adjacent rooms are connected to each other, and the doors are locked until all the enemies in the room are killed.</p>
+			<p>Each door has three possible states: Locked, Open, and Disabled. Doors that don't have a room next to them are disabled, and all others are locked until the room is finished.</p>
+			<p>When the player passes through a door, the door's direction is used to determine which door in the next room the player should move to.</p>
+			<img class="halfWidthImg" src="lash_assets/GenerationExamples.png" alt="GenerationExamples">
+			<h3 id="gravity-objects">Gravity Objects</h3>
+			<p>The player, all enemies, and rocks all inherit from <code>GravityObject</code>. This class contains the basic logic for the physics, setting the gravity direction, activating appropriate colliders based on the orientation, health, etc...</p>
+			<h3 id="the-player">The Player</h3>
+			<p>The player controller started off as the controller from <code>Grid</code>, but I ended up simplifying it a lot.</p>
+			<p>I started by moving to the new input system, which uses actions instead of checking the input each frame. This means I had to restructure the way input is handled. I like the way the new input system works, though. It's very flexible and made it easy to support controllers.</p>
+			<p>Next, I implemented the gravity circle, the mechanic I use to change gravity.</p>
+			<img class="halfWidthImg" src="lash_assets/circle_white.png" alt="Gravity Circle">
+			<p>The gravity circle has two modes: Self, and Other. When activated, it slows down time and allows the player to choose a gravity direction using the arrow keys or the right stick. The color is chosen based on the mode. When deactivated, it changes the gravity direction for either the player or up to two enemies/objects in the radius. It also has a boost system that adds a multiplier to the gravity strength, but that ended up not being used.</p>
+			<p>Finally, I made attacks and animations. To attack, the player casts several rays and deals damage to all enemies in range.</p>
+			<h3 id="looking-back">Looking Back</h3>
+			<p>This game was a challenge. It could still use a lot of work and polish, especially in the game and level design areas, as well as game feel. The combat is not satisfying at all, it needs more sound effects, and the enemies are dull. I need to learn about AI and state machines, in order to create better enemies.</p>
+			<p>That said, I had a blast making it, and I'm glad I joined the jam! Maybe one day I'll return to this project and improve it.</p>
+			<img class="halfWidthImg" src="lash_assets/Icon.png" alt="Icon">
+		</article>
+	</div>
+	<footer>
+		<div class="line"> </div>
+		<a href="http://www.hadidanial.com">Hadi Danial</a>
+	</footer>
+</body>
+</html>
