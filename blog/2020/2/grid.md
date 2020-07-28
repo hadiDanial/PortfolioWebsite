@@ -33,7 +33,7 @@ The `Tiling and Offset` node allows me to repeat the grid along the entire objec
 
 ![Grid Examples](grid_assets/Examples.png)
 
-The `GridManager` animates the transformation. and calculates the gravity direction and movement axis like so:
+The `GridManager` animates the transformation, and calculates the gravity direction and movement axis like so:
 
 `gravity = -(vertical.x * Vector2.up - vertical.y * Vector2.right).normalized * gravityStrength;`
 

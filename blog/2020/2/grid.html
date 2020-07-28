@@ -50,7 +50,7 @@
 <img class='fullWidthImg' src="grid_assets/GridShader.png" alt="Grid Shader">
 <p>The <code>Tiling and Offset</code> node allows me to repeat the grid along the entire object, the xAxis and yAxis properties get updated by the <code>GridManager</code> script, and using matrix multiplication, they allow me to modify the grid in real time to rotate, shear, or transform it in any way I wish.</p>
 <img class='halfWidthImg' src="grid_assets/Examples.png" alt="Grid Examples">
-<p>The <code>GridManager</code> animates the transformation. and calculates the gravity direction and movement axis like so:</p>
+<p>The <code>GridManager</code> animates the transformation, and calculates the gravity direction and movement axis like so:</p>
 <p><code>gravity = -(vertical.x * Vector2.up - vertical.y * Vector2.right).normalized * gravityStrength;</code></p>
 <p><code>movementAxis = -(horizontal.x * Vector2.up - horizontal.y * Vector2.right).normalized;</code></p>
 <p>Where vertical is the first column of the matrix, and horizontal is the second column. x is the first row, and y is the second row.</p>
