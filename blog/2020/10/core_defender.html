@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137014872-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		
+		gtag('config', 'UA-137014872-1');
+	</script>
+	
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>HD - Core Defender</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="Description" content="DESCRIPTION.">
+	<link href="/_css/style.css" rel="stylesheet" type="text/css"/>
+	<script src="/_js/jquery-3.3.1.min.js" type="text/javascript"></script>
+	<script src="/_js/ProjectClass.js" type="text/javascript"></script>
+	<script src="/_js/LoadHeader.js" type="text/javascript"></script>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#c8cdcd">
+	<meta name="theme-color" content="#ffffff">
+	<script> </script>      
+</head>
+<body  class="background" id="b">
+	<div class="content fadeIn">
+		<article>
+				<h1 id="core-defender">Core Defender</h1>
+				<h4 id="october-10th-2020"><em>October 10th, 2020</em></h4>
+				<p>You can play Core Defender <a href="https://hadidanial.itch.io/core-defender">here</a>, Ludum Dare page <a href="https://ldjam.com/events/ludum-dare/47/core-defender">here</a>. It was made by me in under 72 hours.</p>
+				<p>It was time for Ludum Dare 47, and I couldn't wait to participate in the jam again! After some consideration, I decided to go solo and challenge myself to see what I could come up with. Alas, I ended up over-scoping the project and spent a lot of time on the incomplete art.</p>
+				<img img class="quarterWidthImg" src="core_defender_assets/itch_cover.png" alt="Screenshot">
+				<p>The theme for LD47 was 'Stuck in a loop', and after some brainstorming, I came up with the idea that the player would be stuck moving along looping &quot;rails&quot;, as some kind of defense bot protecting an ancient temple or some abandoned facility.</p>
+				<p>I used my (admittedly outdated) <a href="https://github.com/hadiDanial/Path-Creator">fork</a> of Sebastian Lague's <a href="https://github.com/SebLague/Path-Creator">Path Creator</a>, with shape generation and conversion to Unity's own Sprite Shape, to create the paths my player could navigate along.</p>
+				<p>The goal of the game is to kill all the enemies without getting killed, while preventing them from destroying the cores powering the defence systems of the mysterious chambers that you are protecting.</p>
+				<h3 id="weapons">Weapons</h3>
+				<p>The weapons are simple enough. These are their main functions:
+					<ul>
+						<li>Rotate towards target using Quaternion.Slerp().</li>
+						<li>Can only fire if the time between shots has elapsed <em>and</em> the last shot has finished firing, which is set by an animation event after the animation is done.</li>
+						<li>Spawn the ammo prefab and give it rotation, direction, speed and damage stats, also triggered via animation events at the appropriate time. The ammo prefab can spawn at all the specified spawn points in the weapon.</li>
+						<li>Activate/Deactivate when switching to another weapon.</li>
+					</ul>
+				 </p>
+				<p>The hardest part was getting all the rotations to work as intended.
+				There is a variation on this base weapon script for the MultiBlaster weapon, as that one has three weapons instead of one. The differences being setting the rotations for each child Weapon on Start, and that when the Shoot() function is executed, it calls the original Shoot() function for each child Weapon.</p>
+				<h3 id="the-player">The Player</h3>
+				<p>I started off with the FollowPath script from Sebastian's project, and modified it to support 2D rotations, which didn't really matter in the end as the player's body was very small on-screen and it was hard to notice.</p>
+				<p>The player has a list of weapons they can switch between: Blaster, MultiBlaster, and Rocket Launcher. After the current &quot;level&quot; is finished, the player is set to a new path to advance to the next area.</p>
+				<img class="fifteenWidthImg" src="core_defender_assets/player.png" alt="Player Screenshot">
+				<h3 id="enemies">Enemies</h3>
+				<p>There are several types of enemies in the game. I used the <a href="https://arongranberg.com/astar/"><code>Astar Pathfinding Project</code></a> for the &quot;AI&quot;, and it came out better than I could've done myself. It went relatively well, considering it was my first time using A*. I initially had some trouble getting it to work, and when I did I found that the performance had tanked. Luckily, the fix was simple. I was calculating a new path waaaay too often.</p>
+				<p>Some enemies target the player, some target the cores, and some can target both. Unfortunately, I believe this came out bugged in the final jam version for some reason and enemies mostly targeted the player.</p>
+				<p>There are two different types of enemies: Hunters and Blasters.</p>
+				<p>Hunters are the star shaped enemies, and they follow the player and try to hit them physically. After a successful hit, hunters bounce off for a short time then swoop in for another attack.</p>
+				<p>Blasters get within range of the player and fire towards their target, be it player or core. There are two variations of this enemy: single Blaster and MultiBlaster.</p>
+				<div >
+					<img style="vertical-align: middle" class="fifteenWidthImg" src="core_defender_assets/melee.png" alt="Enemy Hunter">
+					<img style="vertical-align: middle" class="fifteenWidthImg" src="core_defender_assets/multi.png" alt="Enemy MultiBlaster">
+					<img style="vertical-align: middle" class="fifteenWidthImg" src="core_defender_assets/blaster.png" alt="Enemy Blaster">
+				</div>
+				<h3 id="levels">Levels</h3>
+				<p>Each <code>Level</code> has its own <code>WaveManager</code>, which handles the spawning of enemies in <code>Waves</code>, and notifies the level when it has been completed. Each level keeps track of all the <code>Cores</code> it contains, and if any are destroyed, it triggers a game over.</p>
+				<p>Each <code>Wave</code> keeps track of its enemies and how many were killed, and when it is over, it tells the manager to start the next one. If all the waves are done, the next level is started instead.</p>
+				<p><code>Wave</code> is a simple Serialized C# class, while the <code>WaveManager</code> is a <code>ScriptableObject</code>, which allows me to create different waves from the editor and duplicate/swap them between levels as I see fit.</p>
+				<img class="fifteenWidthImg" src="core_defender_assets/core.png" alt="Core">
+				<h3 id="mathp">MathP</h3>
+				<p>Quaternions are hard.</p>
+				<p>Every few months, when I need to deal with them in a jam, I get all confused and waste precious time. During my last side project, I created the <code>MathP</code> class, and I've added a few functions to it during the jam. It is still very bare-bones, but I hope to continue using and improving it as time goes on and I develop more games. As it stands, this is the current version, and it is focused on 2D. I cannot guarantee that it's bug free, but this is what I have so far. I ended up using it to handle Quaternion calculations throughout the game.</p>
+				<p>I will probably rename it to something else eventually, as the P is related to that particular project and its requirements.</p>
+				<p><a href="core_defender_assets/MathP.cs">Download here</a></p>
+				<h3 id="the-art">The Art</h3>
+				<p>As always, I used Affinity Designer to create the art.</p>
+				<p>I am happy with how some things turned out, but I failed to create art for the backgrounds and environments, which forced to use a rather bland room.</p>
+				<p>Still, the player, enemies and weapons turned out decent, in my opinion at least, and the animations weren't too bad.</p>
+				<p>These are the &quot;rails&quot; that the player moves on. I initially envisioned an abandoned temple in a jungle somewhere, but when I couldn't create the environment art in time, I ended up recoloring them in-engine.</p>
+				<img class="halfWidthImg" src="core_defender_assets/rails.png" alt="Rails">
+				<p>I used the <code>All In 1 Sprite Shader</code> asset from the Unity Asset Store to create some effects, most notably the hit effect on enemies and recoloring the rails.</p>
+				<h3 id="looking-back">Looking Back</h3>
+				<p>I extensively used events during this jam, and it was an interesting and very useful tool to have.</p>
+				<p>As for the game itself, it is lacking in level design, and I had to rush to connect all the different systems during the last couple of hours, so I didn't have much time to create content or do any bug testing. The result is a <em>very</em> short game without any substantial content. Then again, it is a jam game with very limited time. Lesson learned, stop over-scoping jam games!</p>
+				<p>On the technical side, however, I think it went great. I've always been much better at the technical stuff rather than the artistic and design sides. There are a few bugs here and there, of course, but I'm getting better and better at making systems that work together.</p>
+				<p>It was very fun to do a jam again, especially with the current state of the world and quarantines and lockdowns everywhere. I'm afraid that this is the end of the road for this particular project, though. Until next time!</p>
+				<img class="quarterWidthImg" src="core_defender_assets/cursor.png" alt="Icon">
+		</article>
+	</div>
+	<footer>
+		<div class="line"> </div>
+		<a href="http://www.hadidanial.com">Hadi Danial</a>
+	</footer>
+</body>
+</html>
