@@ -1,5 +1,24 @@
 [
 {
+  "title": "Core Defender",
+  "description": "My entry to Ludum Dare 47.",
+  "date": "10.10.2020",
+  "lastMod": "10.10.2020",
+  "tags": [
+    "unity",
+    "C#",
+    "game",
+    "LD47",
+    "ludum dare 47",
+    "project",
+    "jam",
+    "2020",
+    "finished"
+  ],
+  "coverImage": "\\blog\\2020\\10\\core_defender_assets\\coverImg.png",
+  "path": "\\blog\\2020\\10\\core_defender.html"
+},
+{
   "title": "Lash",
   "description": "My entry to the 7DRL jam 2020.",
   "date": "13.3.2020",
