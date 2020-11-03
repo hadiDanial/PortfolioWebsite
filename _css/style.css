@@ -291,6 +291,14 @@ p{
     width: 50%;
     margin: 0 auto;
 }
+.content .quarterWidthImg{
+    width: 25%;
+    margin: 0 auto;
+}
+.content .fifteenWidthImg{
+    width: 15%;
+    margin: 0 auto;
+}
 
 .rounded{
     border-radius: 10px;
@@ -316,6 +324,15 @@ p{
 .content ol{
     color:var(--text-color);
     padding-left: 4%;
+}
+
+ul {
+    width: 90%
+}
+li {
+    color: var(--text-color);
+    text-align: left;
+    padding: 3px;
 }
 
 .tile{
