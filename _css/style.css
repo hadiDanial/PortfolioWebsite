@@ -157,6 +157,7 @@ nav ul a:hover{
 nav li{  
     list-style-type: none;
     text-align: center;
+    color:inherit;
 }
 /**  /NAV  **/
 
