@@ -1,5 +1,24 @@
 [
 {
+  "title": "Hook 'Em",
+  "description": "A submission for GDU Jam 5.",
+  "date": "30.3.2021",
+  "lastMod": "30.3.2021",
+  "tags": [
+    "unity",
+    "C#",
+    "game",
+    "GDU",
+    "project",
+    "jam",
+    "2021",
+    "featured",
+    "finished"
+  ],
+  "coverImage": "\\blog\\2021\\3\\hook_em_assets\\coverImg.png",
+  "path": "\\blog\\2021\\3\\hook_em.html"
+},
+{
   "title": "Core Defender",
   "description": "My entry to Ludum Dare 47.",
   "date": "10.10.2020",

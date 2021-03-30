@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137014872-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-137014872-1');
+	</script>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>HD - Hook 'Em</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="Description" content="DESCRIPTION.">
+	<link href="/_css/style.css" rel="stylesheet" type="text/css" />
+	<script src="/_js/jquery-3.3.1.min.js" type="text/javascript"></script>
+	<script src="/_js/ProjectClass.js" type="text/javascript"></script>
+	<script src="/_js/LoadHeader.js" type="text/javascript"></script>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#c8cdcd">
+	<meta name="theme-color" content="#ffffff">
+	<script> </script>
+</head>
+
+<body class="background" id="b">
+	<div class="content fadeIn">
+		<article>
+			<h1 id="hook-em">Hook 'Em</h1>
+			<h4 id="march-30th-2021"><em>March 30th, 2021</em></h4>
+			<p>You can play Hook 'Em <a href="https://hadidanial.itch.io/hook-em" target="_blank">here</a>. It was made for the fifth
+				<code>Game Dev Underground</code> game jam, which lasted three days, with the theme of
+				<code>Using Enemies as Weapons</code>.</p>
+			<img src="hook_em_assets/Screenshot.png" class="halfWidthImg" alt="Screenshot">
+			<p>Hook 'Em is a short game in which your only tool is a hook, which you can use to grab enemies and throw
+				them into walls or smash them into each other.</p>
+			<h3 id="the-player">The Player</h3>
+			<p>I used a character controller that I had previously made for an earlier project with slight changes in
+				order to handle the movement of the player. It handled everything from movement to health, and I used
+				the same controller for both the player and the two enemy types.</p>
+			<p>The player has a <code>hook</code> which can be thrown, and if it hits an enemy, grabs them and either
+				returns them for the player to grab, or flings them back behind the player, based on the attack used.
+			</p>
+			<img src="hook_em_assets/hook.png" alt="Hook">
+			<p>I had planned to add a third attack which swings the enemy in a circle around the player, but that proved
+				to be out of scope for this project.</p>
+			<p>The chains are made with a <code>SpriteShape</code> that has 3 points, which I dynamically adjust
+				depending on the hook position. It would be nice to add a curve to the hook in the future.</p>
+			<h3 id="enemies">Enemies</h3>
+			<p>Enemies use the same character controller as the player, with the only difference being the kind of input
+				they receive. This time, as opposed to <a
+					href="https://hadidanial.com/blog/2020/10/core_defender.html">Core Defender</a>, I managed to
+				properly use the <a href="https://arongranberg.com/astar/"><code>Astar Pathfinding Project</code></a>
+				for the AI, creating a basic system where the AI could either patrol a certain route, or follow and
+				attack the player with a certain attack. I am happy to have finally had the chance to learn and use
+				Astar, and am excited to see the possibilities it allows for in future games.</p>
+			<p>Enemies can only be killed when they're thrown at other enemies, walls or obstacles, or if they touch an
+				enemy that is hooked by the player.</p>
+			<h3 id="checkpoints">Checkpoints</h3>
+			<p>The checkpoint system keeps track of all enemies in that checkpoint, and resets them to their original
+				state when a reset is triggered, as well as reset the player to full health and moves him to the
+				checkpoint location.</p>
+			<h3 id="dotween">DOTween</h3>
+			<p>I used <a href="http://dotween.demigiant.com/">DOTween</a> to create the movement patterns for the enemy
+				attacks, as well as a few other things throughout the project, like throwing the hook and reeling it
+				back in, and I thoroughly enjoyed it. It's a simple yet powerful system, and I will be using it
+				frequently in the future.</p>
+			<h3 id="the-art">The Art</h3>
+			<p>Unfortunately, I didn't have an artist, nor the skills and time to create my own art. I drew a hook, used
+				basic shapes for the enemies, made a few different expressions for different states, and left the player
+				as a simple capsule.</p>
+			<img src="hook_em_assets/Enemies.png" class="halfWidthImg" alt="Enemies">
+			<h3 id="looking-back">Looking Back</h3>
+			<p>I'm very please with how this one turned out! I learned a lot about pathfinding, and I can't wait to have
+				another chance to give it a go.</p>
+			<p>I'm also very happy with the player controller. It could certainly use some tweaking, but it is very
+				versatile and can be easily expanded upon, especially with the right settings. I will refactor it,
+				separate it into smaller modules, and will be using it as a default character controller for 2D games
+				from now on.</p>
+
+			<p>I've been busy with college, as well as trying to learn a few different things that are outside of my
+				comfort zone. I made a little app which takes screenshots using <code>WPF</code>, and I plan to continue
+				working on it for a while. I also started to learn <code>dart</code> and <code>Flutter</code>, which
+				seem to be a very promising and useful tools to have in my arsenal.</p>
+		</article>
+	</div>
+	<footer>
+		<div class="line"> </div>
+		<a href="http://www.hadidanial.com">Hadi Danial</a>
+	</footer>
+</body>
+
+</html>
